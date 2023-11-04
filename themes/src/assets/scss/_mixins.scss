@@ -1,0 +1,26 @@
+@use './variables' as *;
+
+@mixin topBottomRightLeft($top, $bottom, $left, $right) {
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+}
+
+@mixin dynamicUnderline($width) {
+  &::before{
+    content: "";
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: $width;
+    top: 85%;
+    right: 0;
+    background-color: $test-color;
+    transition: width $standard-animation-time ease-in-out;
+    @media screen and (min-width: $desktop-breakpoint) {
+      top: 80%;
+    }
+  }
+}
+

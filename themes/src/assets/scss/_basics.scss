@@ -1,0 +1,76 @@
+@use "./variables" as *;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $standard-font-size;
+  line-height: $standard-line-height;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding-top: $navbar-height-mobile;
+  font-family: 'Sarabun', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  @media (min-width: $desktop-breakpoint) {
+    padding-top: $navbar-height-desktop;
+  }
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 200;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.7em;
+  font-weight: 300;
+}
+
+h3 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+a {
+  color: $text-color;
+  text-decoration: none;
+  transition: color 150ms linear;
+  &:active {
+    color: $contrast-color;
+  }
+}
+
+
+li,
+ul {
+  list-style: none;
+  padding:0;
+  margin: 0;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.container {
+  padding: 0 5%;
+}

@@ -1,0 +1,69 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+#nav-toggle {
+  display: none;
+}
+
+#nav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc($navbar-height-mobile / 1.5);
+  width: calc($navbar-height-mobile / 1.5);
+  cursor: pointer;
+
+  @media screen and (min-width: 1200px) {
+    display: none;
+  }
+}
+
+#nav-button-icon,
+#nav-button-icon::before,
+#nav-button-icon::after {
+  width: 40px;
+  height: 2px;
+  background-color: $background-color;
+}
+
+#nav-button-icon {
+  display: block;
+  position: relative;
+  transition: background-color 200ms linear;
+}
+
+#nav-button-icon::before,
+#nav-button-icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: transform 200ms linear;
+}
+
+#nav-button-icon::before {
+  transform: translateY(13px);
+}
+
+#nav-button-icon::after {
+  transform: translateY(-13px);
+}
+
+#nav-toggle:checked ~ #nav-button #nav-button-icon {
+  background-color: transparent;
+}
+
+#nav-toggle:checked ~ #nav-button #nav-button-icon:before {
+  transform: rotate(45deg);
+}
+
+#nav-toggle:checked ~ #nav-button #nav-button-icon:after {
+  transform: rotate(-45deg);
+}
+
+
+#nav-toggle:checked ~ #nav-main {
+  opacity: 1;
+  pointer-events: auto;
+}
