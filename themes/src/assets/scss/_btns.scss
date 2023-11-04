@@ -1,0 +1,27 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+#to-top {
+  position: fixed;
+  z-index: 1000;
+  padding: 1em;
+  bottom: 3em;
+  right: 5%;
+  height: 80px;
+  width: 80px;
+  background-color: $test-color;
+  color: $contrast-color;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #897500;
+  border-radius: 50%;
+  transition: transform $standard-animation-time ease-in-out, box-shadow $standard-animation-time ease-in-out;
+
+  &:hover {
+    transform: translateY(-15px);
+    box-shadow: $contrast-color 0px 10px 5px ;
+    cursor: pointer;
+  }
+}

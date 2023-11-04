@@ -13,22 +13,36 @@
         ));
         ?>
     </nav>
+    <div class="short_info">
+        <p>
+            <?php
+            $info = get_field('info', 'options');
+            echo $info['short_info'];
+            ?>
+        </p>
+    </div>
     <div class="social-icons">
         <?php
         $social_links = get_field('social-links', 'options');
         ?>
 
-        <?php if($social_links['facebook']): ?>
+        <?php if ($social_links['facebook']): ?>
             <a href="<?php echo $social_links['facebook']; ?>" target="_blank">
                 <span class="icon-facebook2" aria-hidden="true"></span>
-                <span class="screen-reader-text"><<?php _e('Follow on Facebook', 'wifi') ?></span>
+                <span class="screen-reader-text"><<?php _e('Follow on Facebook', 'kometin') ?></span>
             </a>
         <?php endif; ?>
 
-        <?php if($social_links['instagram']): ?>
-            <a href="<?php echo $social_links['instagram']; ?>"  target="_blank">
+        <?php if ($social_links['instagram']): ?>
+            <a href="<?php echo $social_links['instagram']; ?>" target="_blank">
                 <span class="icon-instagram" aria-hidden="true"></span>
-                <span class="screen-reader-text">Folge mir auf Instagram</span>
+                <span class="screen-reader-text"><<?php _e('Follow on Instagram', 'kometin') ?></span>
+            </a>
+        <?php endif; ?>
+        <?php if ($social_links['email']): ?>
+            <a href="mailto:<?php echo $social_links['email']; ?>" target="_blank">
+                <span class="icon-mail" aria-hidden="true"></span>
+                <span class="screen-reader-text"><<?php _e('Send an Email', 'kometin') ?></span>
             </a>
         <?php endif; ?>
     </div>
