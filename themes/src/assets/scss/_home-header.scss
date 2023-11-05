@@ -1,0 +1,66 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+#home-header {
+  background-color: lightblue;
+  height: calc(100vh - $navbar-height-mobile);
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    height: calc(100vh - $navbar-height-desktop);
+  }
+}
+
+#comet-container {
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15%;
+  position: absolute;
+  @include topBottomRightLeft(0,0,0,0);
+
+  h1 {
+    font-weight: 800;
+    line-height: 1.1em;
+
+    .firstSpan {
+      font-weight: 200;
+      font-size: 2rem;
+    }
+    .secondSpan {
+      font-size: 4rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  h1,
+  h2 {
+    margin: 0 15%;
+  }
+
+  @media screen and (min-width: $tablet-breakpoint) {
+    right: auto;
+    height: 90%;
+    h1,
+    h2 {
+      margin: 0;
+    }
+  }
+  @media screen and (min-width: $desktop-breakpoint) {
+    top: 200px;
+    height: 55%;
+    text-align: left;
+  }
+  @media screen and (min-width: $biggest-breakpoint) {
+    top: 225px;
+    height: 60%;
+  }
+
+}
+
+
