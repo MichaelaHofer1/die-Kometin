@@ -6,8 +6,10 @@
 
 #particles-js {
   position: absolute;
-  width: 100%;
+  width: 100vw;
+  transform: translateX(-5%);
   height: 100%;
+  z-index: -1;
 }
 
 div.rn-pbwp-div {

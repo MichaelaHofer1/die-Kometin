@@ -1,0 +1,11 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $small-tablet-breakpoint) {
+    flex-direction: row;
+  }
+}

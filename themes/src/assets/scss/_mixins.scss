@@ -24,3 +24,25 @@
   }
 }
 
+@mixin border_colors($skew1, $skew2, $translateX, $translateY) {
+  position: relative;
+  display: inline-block;
+  .color1,
+  .color2 {
+    content: '';
+    display: block;
+    position: absolute;
+    border: solid 1px black;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+  }
+  .color1 {
+    transform: skew($skew1);
+  }
+  .color2 {
+    transform: skew($skew2) translate($translateX, $translateY);
+  }}
+
