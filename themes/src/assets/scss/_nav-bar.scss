@@ -20,8 +20,9 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: #000031;
+  background-color: transparent;
   z-index: 1000;
+  border-bottom: $test-color 1px solid;
 
   .container {
     display: flex;
@@ -142,6 +143,7 @@
     position: relative;
     > a {
       color: $test-color;
+      @include dynamicUnderline(100%);
     }
   }
 

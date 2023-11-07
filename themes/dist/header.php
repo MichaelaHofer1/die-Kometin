@@ -38,4 +38,5 @@
         ?>
 
     </div>
+    <div id="particles-js"></div>
 </nav>
