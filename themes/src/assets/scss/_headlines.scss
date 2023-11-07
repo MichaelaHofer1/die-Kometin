@@ -8,11 +8,6 @@
   font-size: 2.3em;
   position: relative;
 
-  .headline-container {
-    margin: 0 auto;
-    padding: 1.3em 1em;
-    @include border_colors(20deg, 355deg, 5px, 0px);
-  }
 
   &.__middle {
     text-align: center;
@@ -27,4 +22,12 @@
   }
 }
 
+.headline-h1__border {
+  .headline-container {
+    margin: 0 auto;
+    padding: 1.3em 1em;
+    @include border_colors(20deg, 355deg, 5px, 0px);
+  }
+
+}
 

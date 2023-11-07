@@ -624,15 +624,25 @@ div.rn-pbwp-div {
   font-size: 2.3em;
   position: relative;
 }
-.headline-h1 .headline-container,
+.headline-h1.__middle,
+.headline-h1__border.__middle {
+  text-align: center;
+}
+.headline-h1.__font-small,
+.headline-h1__border.__font-small {
+  font-size: 1.7em;
+}
+.headline-h1.__font-medium,
+.headline-h1__border.__font-medium {
+  font-size: 2em;
+}
+
 .headline-h1__border .headline-container {
   margin: 0 auto;
   padding: 1.3em 1em;
   position: relative;
   display: inline-block;
 }
-.headline-h1 .headline-container .color1,
-.headline-h1 .headline-container .color2,
 .headline-h1__border .headline-container .color1,
 .headline-h1__border .headline-container .color2 {
   content: "";
@@ -645,25 +655,11 @@ div.rn-pbwp-div {
   top: 0;
   left: 0;
 }
-.headline-h1 .headline-container .color1,
 .headline-h1__border .headline-container .color1 {
   transform: skew(20deg);
 }
-.headline-h1 .headline-container .color2,
 .headline-h1__border .headline-container .color2 {
   transform: skew(355deg) translate(5px, 0px);
-}
-.headline-h1.__middle,
-.headline-h1__border.__middle {
-  text-align: center;
-}
-.headline-h1.__font-small,
-.headline-h1__border.__font-small {
-  font-size: 1.7em;
-}
-.headline-h1.__font-medium,
-.headline-h1__border.__font-medium {
-  font-size: 2em;
 }
 
 .customizeable-img {
@@ -738,9 +734,53 @@ div.rn-pbwp-div {
 .paragraphs {
   display: flex;
   flex-direction: column;
+  padding: 5em 0;
 }
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 800px) {
   .paragraphs {
     flex-direction: row;
   }
+}
+.paragraphs .para-headline-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+}
+.paragraphs .paragraph-img {
+  flex: 1 1 0;
+  text-align: center;
+  padding: 1em 0;
+  margin: auto auto;
+  order: -1;
+}
+@media screen and (min-width: 800px) {
+  .paragraphs .paragraph-img {
+    padding: 0 3em;
+    text-align: left;
+  }
+}
+.paragraphs .paragraph-img.__round img {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  min-width: 300px;
+}
+@media screen and (min-width: 650px) {
+  .paragraphs .paragraph-img.__round img {
+    width: 350px;
+    height: 350px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .paragraphs .paragraph-img.__round img {
+    width: 550px;
+    height: 550px;
+  }
+}
+.paragraphs .paragraph-img.__round img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.paragraphs .paragraph-img.__img-left {
+  order: 1;
 }

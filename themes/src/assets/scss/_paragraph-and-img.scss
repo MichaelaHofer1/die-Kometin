@@ -4,8 +4,56 @@
 .paragraphs {
   display: flex;
   flex-direction: column;
+  padding: 5em 0;
 
-  @media screen and (min-width: $small-tablet-breakpoint) {
+  @media screen and (min-width: $tablet-breakpoint) {
     flex-direction: row;
+  }
+
+  .para-headline-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+  }
+
+  .paragraph-img {
+    flex: 1 1 0;
+    text-align: center;
+    padding: 1em 0;
+    margin: auto auto;
+    order: -1;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+      padding: 0 3em;
+      text-align: left;
+    }
+
+    &.__round {
+      img {
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        min-width: 300px;
+
+        @media screen and (min-width: $small-tablet-breakpoint) {
+          width: 350px;
+          height: 350px;
+        }
+
+        @media screen and (min-width: $desktop-breakpoint) {
+          width: 550px;
+          height: 550px;
+        }
+      }
+
+      img {
+        object-fit: cover;
+
+      }
+
+    }
+    &.__img-left {
+      order: 1;
+    }
   }
 }

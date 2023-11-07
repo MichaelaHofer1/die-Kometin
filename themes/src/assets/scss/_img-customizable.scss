@@ -20,61 +20,8 @@
   justify-content: right;
   }
 
-  &.__small {
-    img {
-      width: 150px;
-      height: 150px;
-
-      @media screen and (min-width: $tablet-breakpoint) {
-        width: 200px;
-        height: 200px;
-      }
-
-      @media screen and (min-width: $desktop-breakpoint) {
-        width: 250px;
-        height: 250px;
-      }
-    }
-  }
-
-  &.__medium {
-    img {
-      width: 300px;
-      height: 300px;
-
-      @media screen and (min-width: $tablet-breakpoint) {
-        width: 400px;
-        height: 400px;
-      }
-
-      @media screen and (min-width: $desktop-breakpoint) {
-        width: 450px;
-        height: 450px;
-      }
-    }
-  }
-
-  &.__big {
-    img {
-      width: 300px;
-      height: 300px;
-      min-width: 300px;
-
-      @media screen and (min-width: $small-tablet-breakpoint) {
-        width: 550px;
-        height: 550px;
-      }
-
-      @media screen and (min-width: $tablet-breakpoint) {
-        width: 650px;
-        height: 650px;
-      }
-
-      @media screen and (min-width: $desktop-breakpoint) {
-        width: 700px;
-        height: 700px;
-      }
-    }
-  }
+  @include small-img();
+  @include medium-img();
+  @include big-img();
 
 }
