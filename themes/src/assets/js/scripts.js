@@ -8,10 +8,9 @@ function jsLoaded() {
 };
 
 import "./nav"
-/*
-import "./particles"
-import "./app"
-*/
+import "./btn-to-top"
+
+
 
 
 

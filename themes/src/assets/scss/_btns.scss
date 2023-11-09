@@ -17,11 +17,18 @@
   align-items: center;
   border: solid 1px #897500;
   border-radius: 50%;
-  transition: transform $standard-animation-time ease-in-out, box-shadow $standard-animation-time ease-in-out;
+  transition: transform $standard-animation-time ease-in-out, box-shadow $standard-animation-time ease-in-out, opacity $standard-animation-time ease-in-out;
+  opacity: 0;
 
-  &:hover {
-    transform: translateY(-15px);
-    box-shadow: $contrast-color 0px 10px 5px ;
-    cursor: pointer;
+  &.show {
+    opacity: 1;
+
+    &:hover {
+      transform: translateY(-15px);
+      box-shadow: $contrast-color 0px 10px 5px;
+      cursor: pointer;
+    }
   }
+
+
 }

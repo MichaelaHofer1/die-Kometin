@@ -223,9 +223,9 @@ img {
 }
 @media screen and (min-width: 1200px) {
   #nav-main .sub-menu {
-    transform: translate(-50%, calc(-100% - 2.5em));
-    /*transition: transform 400ms ease-in-out;*/
-    z-index: 999;
+    transform: translate(-50%, -100%);
+    transition: transform 300ms ease-in-out;
+    z-index: -1;
     display: block;
     position: absolute;
     background-color: black;
@@ -234,6 +234,9 @@ img {
     padding: 1em 0;
     opacity: 0;
     pointer-events: none;
+  }
+  #nav-main .sub-menu.nav__active {
+    transform: translate(-50%, 0);
   }
 }
 #nav-main .sub-menu li {
@@ -517,9 +520,13 @@ img {
   align-items: center;
   border: solid 1px #897500;
   border-radius: 50%;
-  transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out, opacity 300ms ease-in-out;
+  opacity: 0;
 }
-#to-top:hover {
+#to-top.show {
+  opacity: 1;
+}
+#to-top.show:hover {
   transform: translateY(-15px);
   box-shadow: #0f1431 0px 10px 5px;
   cursor: pointer;
