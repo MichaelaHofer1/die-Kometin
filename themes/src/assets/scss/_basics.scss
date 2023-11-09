@@ -79,3 +79,12 @@ img {
 .container {
   padding: 0 5%;
 }
+
+.img-and-text,
+.member {
+  padding: 5em calc(6%);
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    padding:  5em 8%;
+  }
+}

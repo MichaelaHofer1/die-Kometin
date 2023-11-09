@@ -1,6 +1,16 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+h1.headline-h1,
+h1.headline-h1__border {
+  padding: 2em 0 1em;
+
+  @media screen and (min-width: $small-tablet-breakpoint) {
+    padding-top: 4em;
+  }
+}
+
+
 
 .headline-h1,
 .headline-h1__border {
@@ -26,7 +36,7 @@
   .headline-container {
     margin: 0 auto;
     padding: 1.3em 1em;
-    @include border_colors(20deg, 355deg, 5px, 0px);
+    @include border_colors(20deg, 355deg, 0, 0, 5px, 0px);
   }
 
 }

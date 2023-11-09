@@ -38,7 +38,7 @@ if ($sectionTextImg['form'] == 'round') {
 }
 ?>
 
-<section>
+<section class="img-and-text">
 
     <div class="paragraphs">
         <div class="para-headline-container">

@@ -116,4 +116,39 @@ add_action('acf/init', function () {
     }
 });
 
+add_action('acf/init', function () {
+    if (function_exists('acf_register_block_type')) {
+        acf_register_block_type(array(
+            'name' => 'Mitglieder',
+            'title' => __('Mitglieder', 'kometin'),
+            'description' => __('Das ist ein Block für ein neues Mitglied', 'kometin'),
+            'supports' => array('anchor' => false),
+            'category' => 'kometin',
+            'keywords' => array('Bild', 'kometin', 'img', 'picture', 'image', 'text', 'Mitglied'),
+            'post_type' => array('page'),
+            'align' => false,
+            'mode' => false,
+            'icon' => 'admin-users',
+            'render_template' => 'template-parts/member.php',
+        ));
+    }
+});
+
+add_action('acf/init', function () {
+    if (function_exists('acf_register_block_type')) {
+        acf_register_block_type(array(
+            'name' => 'Räume',
+            'title' => __('Räume', 'kometin'),
+            'description' => __('Das ist ein Block für die Räume', 'kometin'),
+            'supports' => array('anchor' => false),
+            'category' => 'kometin',
+            'keywords' => array('Bild', 'kometin', 'img', 'Raum', 'Räume'),
+            'post_type' => array('page'),
+            'align' => false,
+            'mode' => false,
+            'icon' => 'coffee',
+            'render_template' => 'template-parts/rooms.php',
+        ));
+    }
+});
 ?>

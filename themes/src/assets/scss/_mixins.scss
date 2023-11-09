@@ -24,7 +24,7 @@
   }
 }
 
-@mixin border_colors($skew1, $skew2, $translateX, $translateY) {
+@mixin border_colors($skew1, $skew2, $translate1X, $translate1Y, $translateX, $translateY) {
   position: relative;
   display: inline-block;
   .color1,
@@ -40,7 +40,7 @@
     left: 0;
   }
   .color1 {
-    transform: skew($skew1);
+    transform: skew($skew1) translate($translate1X, $translate1Y);
   }
   .color2 {
     transform: skew($skew2) translate($translateX, $translateY);

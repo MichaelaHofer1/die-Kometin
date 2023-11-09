@@ -4,16 +4,20 @@
 .paragraphs {
   display: flex;
   flex-direction: column;
-  padding: 5em 0;
+  /*padding: 5em 5%;*/
 
-  @media screen and (min-width: $tablet-breakpoint) {
+  @media screen and (min-width: $big-tablet-breakpoint) {
     flex-direction: row;
+  }
+  @media screen and (min-width: $desktop-breakpoint) {
+    /*padding:  5em 8%;*/
   }
 
   .para-headline-container {
     display: flex;
     flex-direction: column;
     flex: 1 1 0;
+    /*padding: 0 3em;*/
   }
 
   .paragraph-img {
@@ -21,10 +25,10 @@
     text-align: center;
     padding: 1em 0;
     margin: auto auto;
-    order: -1;
+    order: 1;
 
     @media screen and (min-width: $tablet-breakpoint) {
-      padding: 0 3em;
+      padding: 1em 3em;
       text-align: left;
     }
 
@@ -41,6 +45,10 @@
         }
 
         @media screen and (min-width: $desktop-breakpoint) {
+          width: 350px;
+          height: 350px;
+        }
+        @media screen and (min-width: $biggest-breakpoint) {
           width: 550px;
           height: 550px;
         }
@@ -53,7 +61,7 @@
 
     }
     &.__img-left {
-      order: 1;
+      order: -1;
     }
   }
 }
