@@ -58,6 +58,8 @@
 
 <div id="to-top">
     nach<br>oben
+    <span class="color1"></span>
+    <span class="color2"></span>
 </div>
 
 <?php

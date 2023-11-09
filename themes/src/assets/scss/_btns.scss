@@ -2,7 +2,6 @@
 @use "./mixins" as *;
 
 #to-top {
-  position: fixed;
   z-index: 1000;
   padding: 1em;
   bottom: 3em;
@@ -15,18 +14,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid 1px #897500;
+  /*border: solid 1px #897500;*/
+  @include border_colors(7deg, -8deg, -1px, -3px, 0, 1px);
   border-radius: 50%;
-  transition: transform $standard-animation-time ease-in-out, box-shadow $standard-animation-time ease-in-out, opacity $standard-animation-time ease-in-out;
+  /*transition: transform $standard-animation-time ease-in-out, box-shadow $standard-animation-time ease-in-out, opacity $standard-animation-time ease-in-out;*/
+  transition: transform   $standard-animation-time ease-in-out;
   opacity: 0;
+
+  .color1 {
+    border-color: ^#82b9d9;
+    transition: transform 250ms ease-in-out;
+  }
+  .color2 {
+    border-color: #35648c;
+    transition: transform 150ms ease-in-out;
+  }
 
   &.show {
     opacity: 1;
+    position: fixed;
 
     &:hover {
-      transform: translateY(-15px);
-      box-shadow: $contrast-color 0px 10px 5px;
       cursor: pointer;
+      transform: translateY(-10px);
+      .color1{
+        transform: rotateY(-30deg) skew(7deg) translate(-1px, -3px);
+      }
+      .color2 {
+        transform: rotateY(-335deg) skew(-8deg) translate(0, 1px);
+      }
     }
   }
 

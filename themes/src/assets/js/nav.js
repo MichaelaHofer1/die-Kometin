@@ -27,7 +27,7 @@ const navHover = function (e, opacity, transition) {
     }
 }
 navBar.addEventListener('mouseover', function (e) {
-    navHover(e, .4, 'opacity ease-in 150ms')
+    navHover(e, .8, 'opacity ease-in 150ms')
 })
 navBar.addEventListener('mouseout', function (e) {
     navHover(e, 1, 'opacity ease-out 150ms')
