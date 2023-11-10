@@ -9,6 +9,7 @@ function jsLoaded() {
 
 import "./nav"
 import "./btn-to-top"
+import "./shorten-text"
 
 
 

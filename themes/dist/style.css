@@ -544,11 +544,11 @@ img {
   transform: skew(-8deg) translate(0, 1px);
 }
 #to-top .color1 {
-  border-color: 82b9d9;
+  border-color: #82b9d9;
   transition: transform 250ms ease-in-out;
 }
 #to-top .color2 {
-  border-color: #0000de;
+  border-color: #35648c;
   transition: transform 150ms ease-in-out;
 }
 #to-top.show {
@@ -564,6 +564,17 @@ img {
 }
 #to-top.show:hover .color2 {
   transform: rotateY(-335deg) skew(-8deg) translate(0, 1px);
+}
+
+.show-more-btn,
+.show-less-btn {
+  color: #888;
+  padding: 1em 0;
+}
+.show-more-btn:hover,
+.show-less-btn:hover {
+  cursor: pointer;
+  color: #555;
 }
 
 #home-header {

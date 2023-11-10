@@ -22,7 +22,7 @@
   opacity: 0;
 
   .color1 {
-    border-color: ^#82b9d9;
+    border-color: #82b9d9;
     transition: transform 250ms ease-in-out;
   }
   .color2 {
@@ -45,6 +45,16 @@
       }
     }
   }
+}
 
 
+.show-more-btn,
+.show-less-btn {
+  color: #888;
+  padding: 1em 0;
+
+  &:hover {
+    cursor: pointer;
+    color: #555;
+  }
 }

@@ -20,7 +20,7 @@ if ($sectionMember['position'] == 'img-left') {
                 <?php echo $memberName['name']; ?>
             </h3>
             <span class="background-color1<?php echo $positionImg ?>" style="background-color:<?php echo $memberName['background-color']; ?>"></span>
-            <p><?php echo $sectionMember['description']; ?></p>
+            <p class="member-description"><?php echo $sectionMember['description']; ?></p>
             <?php
             $rows = $sectionMember['responsibility_list'];;
             if ($rows) {
