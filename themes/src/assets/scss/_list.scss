@@ -1,0 +1,31 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.list {
+  ul {
+    padding: 5%;
+    margin: 0 auto;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+      padding: 0;
+      max-width: 80%;
+    }
+    @media screen and (min-width: $biggest-breakpoint) {
+      width: 70%;
+      max-width: 1200px;
+    }
+
+    &.__bullet-point {
+      li {
+        list-style-type: disc;
+      }
+    }
+  }
+
+  h3 {
+    letter-spacing: 0;
+    font-family: "Bellefair",  sans-serif;
+    font-size: 1.6rem;
+    margin: 2em 0 0.5rem;
+  }
+}

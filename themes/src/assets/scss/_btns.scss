@@ -14,10 +14,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /*border: solid 1px #897500;*/
   @include border_colors(7deg, -8deg, -1px, -3px, 0, 1px);
   border-radius: 50%;
-  /*transition: transform $standard-animation-time ease-in-out, box-shadow $standard-animation-time ease-in-out, opacity $standard-animation-time ease-in-out;*/
   transition: transform   $standard-animation-time ease-in-out;
   opacity: 0;
 
@@ -57,4 +55,46 @@
     cursor: pointer;
     color: #555;
   }
+}
+
+.standard-btn {
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+
+  &.__left {
+    text-align: left;
+  }
+
+  &.__font-small {
+    font-size: 1em;
+  }
+
+  &.__font-medium {
+    font-size: 1.3em;
+  }
+
+  a {
+    display: block;
+    padding: .8em 1em;
+    margin: 0 auto;
+    max-width: 300px;
+    border: 1px solid $contrast-color;
+    position: relative;
+    background-color: $test-color;
+    transition: background-color $standard-animation-time ease-in-out, color $standard-animation-time ease-in-out;
+
+    &:hover {
+      color: $test-color;
+      background-color: $contrast-color;
+      border-color: $test-color;
+
+      &::before {
+        width: 100%;
+        left: 0;
+        box-shadow: #000665 1px 1px 5px;
+      }
+    }
+  }
+
 }

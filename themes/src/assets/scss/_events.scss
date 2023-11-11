@@ -1,0 +1,39 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.event-list {
+
+  ul {
+    left: 50%;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    transform: translateX(-50%);
+
+    @media screen and (min-width: $tablet-breakpoint) {
+      width: 45%;
+    }
+  }
+
+  li {
+    padding: 2em ;
+    margin-bottom: 1em;
+    border: 1px solid $test-color;
+    position: relative;
+  }
+
+
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 1em;
+    font-weight: 700;
+    color: #2a3dac;
+  }
+}

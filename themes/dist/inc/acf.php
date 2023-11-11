@@ -151,4 +151,41 @@ add_action('acf/init', function () {
         ));
     }
 });
+
+add_action('acf/init', function () {
+    if (function_exists('acf_register_block_type')) {
+        acf_register_block_type(array(
+            'name' => 'Button',
+            'title' => __('Button', 'kometin'),
+            'description' => __('Das ist ein Button', 'kometin'),
+            'supports' => array('anchor' => false),
+            'category' => 'kometin',
+            'keywords' => array('Button', 'kometin', 'btn', 'mehr'),
+            'post_type' => array('page'),
+            'align' => false,
+            'mode' => false,
+            'icon' => 'plus-alt2',
+            'render_template' => 'template-parts/standard-btn.php',
+        ));
+    }
+});
+
+add_action('acf/init', function () {
+    if (function_exists('acf_register_block_type')) {
+        acf_register_block_type(array(
+            'name' => 'Aufzählung',
+            'title' => __('Aufzählung', 'kometin'),
+            'description' => __('Das ist ein anpassbarer Aufzählungsblock', 'kometin'),
+            'supports' => array('anchor' => false),
+            'category' => 'kometin',
+            'keywords' => array('Aufzählung', 'kometin', 'liste', 'Punkte'),
+            'post_type' => array('page'),
+            'align' => false,
+            'mode' => false,
+            'icon' => 'editor-ul',
+            'render_template' => 'template-parts/standard-list.php',
+        ));
+    }
+});
 ?>
+
