@@ -10,8 +10,8 @@
     position: relative;
     transform: translateX(-50%);
 
-    @media screen and (min-width: $tablet-breakpoint) {
-      width: 45%;
+    @media screen and (min-width: $big-tablet-breakpoint) {
+      width: 500px;
     }
   }
 

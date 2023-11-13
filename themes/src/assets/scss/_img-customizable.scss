@@ -3,8 +3,16 @@
 
 
 .customizeable-img {
-  padding: 2em;
+  padding: 0 2em;
   display: flex;
+  position: relative;
+
+  img {
+    width: auto;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
   &.__round {
     img {

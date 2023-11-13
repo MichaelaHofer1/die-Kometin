@@ -50,16 +50,19 @@
   &.__small {
     img {
       width: 150px;
-      height: 150px;
+      /*height: 150px;*/
+      height: auto;
 
       @media screen and (min-width: $tablet-breakpoint) {
         width: 200px;
-        height: 200px;
+        /*height: 200px;*/
+        height: auto;
       }
 
       @media screen and (min-width: $desktop-breakpoint) {
         width: 250px;
-        height: 250px;
+        /*height: 250px;*/
+        height: auto;
       }
     }
   }
@@ -69,16 +72,20 @@
   &.__medium {
     img {
       width: 300px;
-      height: 300px;
+      /*height: 300px;*/
+      height: auto;
 
       @media screen and (min-width: $tablet-breakpoint) {
         width: 400px;
-        height: 400px;
+        /*height: 400px;*/
+        height: auto;
+        min-width: 400px;
       }
 
       @media screen and (min-width: $desktop-breakpoint) {
         width: 450px;
-        height: 450px;
+        /*height: 450px;*/
+        height: auto;
       }
     }
   }
@@ -88,17 +95,20 @@
   &.__big {
     img {
       width: 300px;
-      height: 300px;
+      /*height: 300px;*/
+      height: auto;
       min-width: 300px;
 
       @media screen and (min-width: $small-tablet-breakpoint) {
         width: 550px;
-        height: 550px;
+        /*height: 550px;*/
+        height: auto;
       }
 
       @media screen and (min-width: $tablet-breakpoint) {
         width: 650px;
-        height: 650px;
+        /*height: 650px;*/
+        height: auto;
       }
 
       @media screen and (min-width: $desktop-breakpoint) {

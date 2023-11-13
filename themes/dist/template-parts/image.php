@@ -27,12 +27,30 @@ if ($image['size'] == 'small') {
     $size = ' __big';
 }
 
+$link = '';
+if($image['link_option'] == 'link') {
+    $link = ' img-link';
+}
 ?>
 
-<div class="customizeable-img <?php
+<div>
+    <div class="customizeable-img <?php
     echo $form;
     echo $position;
     echo $size;
-?>">
-    <?php echo wp_get_attachment_image($image['img'], 'large'); ?>
+    echo $link;
+    ?>">
+    <?php if($image['link_option'] == 'link') { ?>
+        <a href=<?php echo $image['img_link']; ?> target="_blank"><?php echo wp_get_attachment_image($image['img'], 'large'); ?></a><?php
+        } else {
+        echo wp_get_attachment_image($image['img'], 'large');
+    }
+        ?>
+    </div>
+    <?php if ($image['link_option'] == 'bigger') {
+        echo '<div class="lightbox-container">
+                     <div class="lightbox-toggle"></div>
+                   </div>';
+    }
+    ?>
 </div>

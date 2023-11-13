@@ -1,4 +1,4 @@
 // Räume Bilder lightbox hinzufügen
 // "weniger Btn" zum funktioniren bringen
 // Fade-in animationen
-// Veranstaltungen stylen
+// slider vergangene Veranstaltungen (auf Veranstalung-seite)

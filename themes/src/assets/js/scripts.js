@@ -11,7 +11,7 @@ import "./nav"
 import "./btn-to-top"
 import "./shorten-text"
 import "./events"
-
+import "./lightbox"
 
 
 
@@ -26,22 +26,9 @@ const homeHeadline = function () {
 }
 
 
-//mobilizon events
-const mobilizonSection = document.querySelectorAll('.connector-mobilizon_events-list')
-const mobilizonDisplay = function () {
-    if(mobilizonSection) {
-        mobilizonSection.forEach((list, i) => {
-            list.classList.add('event-list')
-            console.log(mobilizonSection)
-        })
-    }
-}
-
-
 
 
 document.addEventListener('DOMContentLoaded', function () {
     jsLoaded()
     homeHeadline()
-    mobilizonDisplay()
 }, false)
