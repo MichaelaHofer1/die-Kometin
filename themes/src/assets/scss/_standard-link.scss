@@ -1,0 +1,52 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.standard-link,
+.custom-file {
+  font-size: $standard-font-size;
+  font-family: Sarabun, sans-serif;
+  text-align: center;
+  transition: color $standard-animation-time ease-in-out;
+
+  &.__left {
+    text-align: left;
+  }
+
+  &.__right {
+    text-align: right;
+  }
+
+  &.__small {
+    font-size: $standard-font-size;
+  }
+
+  &.__middle {
+    font-size: 1.5rem;
+  }
+
+  &.__big {
+    font-size: 2rem;
+  }
+
+  a {
+    position: relative;
+    padding-bottom: .5em;
+    color: $contrast-color;
+    font-size: $standard-font-size;
+    @include dynamicUnderline(0);
+
+    &:hover {
+      color: #0b0b6e;
+      font-style: italic;
+
+      &::before {
+        width: 100%;
+        left: 0;
+      }
+    }
+    &:visited {
+      font-style: italic;
+    }
+  }
+
+}

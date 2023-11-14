@@ -87,3 +87,8 @@ img {
     padding:  5em 8%;
   }
 }
+
+::selection {
+  color: $contrast-color;
+  background-color: $test-color;
+}

@@ -1,245 +1,36 @@
-
 'use strict';
 
-//ab 450 Zeichen beim nächsten Wort ein "mehr lesen" tag einfügen und den restlichen Text verstecken mit "..."
+export function readMore() {
+    const memberDescription = document.querySelectorAll('.member-description');
+    const dots = '...';
+    let counter = 0;
+    let btnMore = document.querySelectorAll('.btn-show-more');
 
-//checken ob index 450 ein Leerzeichen ist
-//falls nicht, so lange weiterzählen, bis es ein Leerzeichen gibt
-// statt dem leerzeichen drei Punkte einfügen
-// restlichen Text verstecken
-// button einfügen mit "mehr lesen"
-// wenn button geklickt wird PUnkte weg, text verlängern, button mti "weniger lesen"
+    for (let el = 0; el < memberDescription.length; el++) {
+        if (memberDescription[el].textContent.length >= 450) {
+            memberDescription[el].parentElement.querySelector('.btn-show-more').style.display = 'block';
+            const visibleText = memberDescription[el].innerHTML.substring(0, 450);
+            const hiddenText = memberDescription[el].innerHTML.substring(450, memberDescription[el].innerHTML.length);
+            const fullText = visibleText + hiddenText;
 
+            memberDescription[el].innerHTML = visibleText + dots
 
-const textExcerpt = function () {
-    const description = document.querySelectorAll('.member-description');
-    const more = 'mehr';
-    const less = 'weniger';
-    const theBtn = function (value) {
-        return '<br>' + `<span class="show-more-btn ${value}">` + `${value} anzeigen` + '</span>';
-    }
+            for (let e = 0; e < btnMore.length; e++) {
+                btnMore[e].addEventListener('click', function () {
 
-    //let btnShowMore = '<br>' + '<span class="show-more-btn">' + 'mehr anzeigen' + '</span>';
-    //let btnShowLess = '<br>' + '<span class="show-more-btn">' + 'weniger anzeigen' + '</span>';
+                    if (counter === 0) {
+                        memberDescription[el].innerHTML = fullText
+                        btnMore[e].parentElement.querySelector('.btn-show-more').innerHTML = 'weniger ansehen'
+                        return counter = 1;
 
-
-    description.forEach((text, i) => {
-        if (text.textContent.length >= 450) {
-            let truncate = text.textContent.substring(0, 450) + '...';
-            let fullText = text.textContent.substring(0, text.length) + theBtn(less);
-            text.innerHTML = truncate + theBtn(more);
-
-            const btnClicked = document.querySelectorAll('.show-more-btn')
-            const moreBtn = document.querySelectorAll('.mehr');
-            const lessBtn = document.querySelectorAll('.weniger');
-
-            const makeFullText = function () {
-                btnClicked.forEach(( btn, i) => {
-                    btn.innerHTML = 'weniger anzeigen';
-                    text.innerHTML = fullText
-                })
-            }
-
-            const makeCroppedText = function () {
-                btnClicked.forEach(( btn, i) => {
-                    text.innerHTML = truncate + theBtn(less)
-                })
-            }
-
-            moreBtn.forEach((btn, i ) => {
-                btn.addEventListener('click', makeFullText)
-            })
-
-            lessBtn.forEach((btn, i ) => {
-                btn.addEventListener('click', makeCroppedText)
-            })
-
-
-
-            /*const btnIsClicked = function (){
-                btnClicked.forEach((btn, i ) => {
-                    btn.addEventListener('click', function () {
-                        if(btn.classList.contains('mehr')) {
-                            console.log('ja')
-                            btn.innerHTML = 'weniger anzeigen';
-                            text.innerHTML = fullText
-
-                        } else if (btn.classList.contains('weniger')) {
-                            console.log('nein')
-                            btn.innerHTML = 'mehr anzeigen';
-                            btn.innerHTML.style.color = 'lavender';
-                            text.innerHTML = truncate + theBtn(less)
-                        }
-                    })
-                })
-            }*/
-
-
-
-
-
-
-            moreBtn.forEach((btn, i) => {
-                btn.addEventListener('click', function () {
-                    btn.innerHTML = 'weniger anzeigen';
-                    text.innerHTML = fullText
-                })
-            })
-
-            lessBtn.forEach((btn, i) => {
-                btn.addEventListener('click', function () {
-                    btn.innerHTML = 'mehr anzeigen';
-                    btn.innerHTML.style.color = 'lavender';
-                    text.innerHTML = truncate + theBtn(less)
-                })
-            })
-
-
-            lessBtn.forEach((btn, i) => {
-                btn.addEventListener('click', function () {
-                    if (btn.innerHTML === 'weniger anzeigen') {
-                        btn.innerHTML = 'mehr anzeigen';
-                        text.innerHTML = truncate + btnShowMore
+                    }
+                    if (counter === 1) {
+                        memberDescription[el].innerHTML = visibleText + dots;
+                        btnMore[e].parentElement.querySelector('.btn-show-more').innerHTML = 'mehr ansehen'
+                        return counter = 0;
                     }
                 })
-            })
-        }
-    })
-}
-
-
-
-
-//////////////////////
-//////////////////////
-//////////////////////
-
-
-
-const memberText = document.querySelectorAll('.member-description');
-const longDescriptions = [];
-let croppedText = [], hiddenText = [], fullDescription = [];
-
-
-const cropLongDescriptions = function (option) {
-    longDescriptions.forEach( (descr, i) => {
-        croppedText.push(descr.textContent.substring(0, 450) + '...');
-        hiddenText.push(descr.textContent.substring(450, descr.length));
-        descr.innerHTML = croppedText[i] + '<br>' + '<span class="show-more-btn">' + option + '</span>';
-    })
-}
-
-const isTextLong = function () {
-    memberText.forEach((member, i) => {
-        if(member.innerHTML.length >= 450) {
-            longDescriptions.push(member);
-            cropLongDescriptions('mehr ansehen');
-        }
-    })
-}
-
-
-/*isTextLong();*/
-
-const btnShowMore = document.querySelectorAll('.show-more-btn');
-const btnShowMoreArray = [...btnShowMore];
-const showFullText = function () {
-    btnShowMoreArray.forEach((btn, i) => {
-        btn.addEventListener('click', function () {
-            longDescriptions[i].innerHTML = croppedText[i].replace('...', '') + hiddenText[i] + '<br>' + '<span class="show-more-btn show-less-btn">' + 'weniger ansehen' + '</span>';
-        })
-
-
-    })
-}
-
-
-
-const hideFullText = function () {
-
-}
-
-
-
-/*showFullText()*/
-
-
-
-//////////////////////////////////////////////
-
-const moreBtn = document.querySelectorAll('.show-more-btn');
-const lessBtn = document.querySelectorAll('.show-less-btn');
-
-const clickBtnMore = function () {
-    moreBtn.forEach((btn, i) => {
-        btn.addEventListener('click', function () {
-            if (btn.innerHTML === 'mehr anzeigen') {
-                btn.innerHTML = 'weniger anzeigen';
-                btn.parentElement.innerHTML = fullText
-                btn.classList.add('.show-less-btn')
             }
-        })
-    })
-}
-
-
-    const textExcerpt1 = function () {
-        const description = document.querySelectorAll('.member-description');
-        let btnShowMore = '<br>' + '<span class="show-more-btn">' + 'mehr anzeigen' + '</span>';
-        let btnShowLess = '<br>' + '<span class="show-more-btn">' + 'weniger anzeigen' + '</span>';
-
-        description.forEach((text, i) => {
-            if (text.textContent.length >= 450) {
-                let truncate = text.textContent.substring(0, 450) + '...';
-                let hiddenText1 = text.textContent.substring(450, text.length);
-                let fullText = truncate.replace('...', '') + hiddenText1 + btnShowLess;
-
-                text.innerHTML = truncate + btnShowMore;
-
-                const moreBtn = document.querySelectorAll('.show-more-btn');
-                const lessBtn = document.querySelectorAll('.show-less-btn');
-
-                moreBtn.forEach((btn, i) => {
-                    btn.addEventListener('click', function () {
-                        if (btn.innerHTML === 'mehr anzeigen') {
-                            btn.innerHTML = 'weniger anzeigen';
-                            text.innerHTML = fullText
-                            btn.classList.add('.show-less-btn')
-                        }
-                    })
-                })
-
-                lessBtn.forEach((btn, i) => {
-                    btn.addEventListener('click', function () {
-                        if (btn.innerHTML === 'weniger anzeigen') {
-                            btn.innerHTML = 'mehr anzeigen';
-                            text.innerHTML = truncate + btnShowMore
-                        }
-                    })
-                })
-                console.log(moreBtn, lessBtn)
-            }
-        })
+        }
     }
-
-
-textExcerpt1();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}

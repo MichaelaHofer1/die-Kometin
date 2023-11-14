@@ -7,6 +7,7 @@ include 'loops/class.php';
 $sectionMember = get_field('member');
 $memberName = $sectionMember['name_group'];
 $memberImg = $sectionMember['img_and_border'];
+$memberLink = $sectionMember['individual-link'];
 
 $positionImg = '';
 if ($sectionMember['position'] == 'img-left') {
@@ -20,7 +21,14 @@ if ($sectionMember['position'] == 'img-left') {
                 <?php echo $memberName['name']; ?>
             </h3>
             <span class="background-color1<?php echo $positionImg ?>" style="background-color:<?php echo $memberName['background-color']; ?>"></span>
-            <p class="member-description"><?php echo $sectionMember['description']; ?></p>
+            <div class="description-container">
+                <p class="member-description"><?php echo $sectionMember['description']; ?></p>
+                <span class="btn-show-more">mehr ansehen</span>
+            </div>
+        <?php if($sectionMember['link_individual-member'] == 'yes') { ?>
+                <a href=<?php echo $memberLink['link_member'] ?> target="_blank"><?php echo $memberLink['link-text']; ?></a><?php
+            }
+            ?>
             <?php
             $rows = $sectionMember['responsibility_list'];;
             if ($rows) {

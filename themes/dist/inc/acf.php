@@ -187,3 +187,20 @@ add_action('acf/init', function () {
         ));
     }
 });
+add_action('acf/init', function () {
+    if (function_exists('acf_register_block_type')) {
+        acf_register_block_type(array(
+            'name' => 'Link',
+            'title' => __('Link', 'kometin'),
+            'description' => __('Das ist ein anpassbarer Link', 'kometin'),
+            'supports' => array('anchor' => false),
+            'category' => 'kometin',
+            'keywords' => array('Link', 'kometin', 'website', 'url'),
+            'post_type' => array('page'),
+            'align' => false,
+            'mode' => false,
+            'icon' => 'share',
+            'render_template' => 'template-parts/standard-link.php',
+        ));
+    }
+});

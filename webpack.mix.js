@@ -11,7 +11,7 @@ const css_tasks = [
 
 const js_tasks = [
     {name: 'js-script', file: './themes/src/assets/js/scripts.js', dest: js_out_dir, uglify: true},
-    {name: 'js-nav', file: './themes/src/assets/js/nav.js', dest: js_out_dir, uglify: true},
+    //{name: 'js-nav', file: './themes/src/assets/js/nav.js', dest: js_out_dir, uglify: true},
 ];
 
 
