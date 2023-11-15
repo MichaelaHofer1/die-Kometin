@@ -38,7 +38,7 @@
     a {
       font-style: italic;
       color: $contrast-color;
-      padding-bottom: .5em;
+      padding: 1em 0;
     }
   }
 
@@ -142,6 +142,7 @@
 }
 
 .responsibilities {
+  margin-top: 1em;
   span {
     font-style: italic;
   }

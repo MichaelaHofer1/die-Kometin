@@ -204,3 +204,21 @@ add_action('acf/init', function () {
         ));
     }
 });
+
+add_action('acf/init', function () {
+    if (function_exists('acf_register_block_type')) {
+        acf_register_block_type(array(
+            'name' => 'Slideshow',
+            'title' => __('Slideshow', 'kometin'),
+            'description' => __('Das ist eine Slideshow', 'kometin'),
+            'supports' => array('anchor' => false),
+            'category' => 'kometin',
+            'keywords' => array('galerie', 'kometin', 'Slideshow', 'slider'),
+            'post_type' => array('page'),
+            'align' => false,
+            'mode' => false,
+            'icon' => 'images-alt2',
+            'render_template' => 'template-parts/slideshow.php',
+        ));
+    }
+});
