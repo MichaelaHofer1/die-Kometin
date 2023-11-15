@@ -1,36 +1,31 @@
 'use strict';
-
 export function readMore() {
     const memberDescription = document.querySelectorAll('.member-description');
     const dots = '...';
-    let counter = 0;
-    let btnMore = document.querySelectorAll('.btn-show-more');
 
     for (let el = 0; el < memberDescription.length; el++) {
-        if (memberDescription[el].textContent.length >= 450) {
-            memberDescription[el].parentElement.querySelector('.btn-show-more').style.display = 'block';
-            const visibleText = memberDescription[el].innerHTML.substring(0, 450);
-            const hiddenText = memberDescription[el].innerHTML.substring(450, memberDescription[el].innerHTML.length);
+        if (memberDescription[el].textContent.length >= 470) {
+            const memberEl = memberDescription[el];
+            const btnElement = memberEl.parentElement.querySelector('.btn-show-more');
+            const visibleText = memberEl.innerHTML.substring(0, 470);
+            const hiddenText = memberEl.innerHTML.substring(470, memberEl.innerHTML.length);
             const fullText = visibleText + hiddenText;
 
-            memberDescription[el].innerHTML = visibleText + dots
+            btnElement.style.display = 'block';
+            btnElement.classList.add('isHidden')
+            memberEl.innerHTML = visibleText + dots
 
-            for (let e = 0; e < btnMore.length; e++) {
-                btnMore[e].addEventListener('click', function () {
-
-                    if (counter === 0) {
-                        memberDescription[el].innerHTML = fullText
-                        btnMore[e].parentElement.querySelector('.btn-show-more').innerHTML = 'weniger ansehen'
-                        return counter = 1;
-
-                    }
-                    if (counter === 1) {
-                        memberDescription[el].innerHTML = visibleText + dots;
-                        btnMore[e].parentElement.querySelector('.btn-show-more').innerHTML = 'mehr ansehen'
-                        return counter = 0;
-                    }
-                })
-            }
+            btnElement.addEventListener('click', function () {
+                if (btnElement.classList.contains('isHidden')) {
+                    btnElement.innerHTML = 'weniger ansehen';
+                    btnElement.classList.replace('isHidden', 'isVisible')
+                    memberEl.innerHTML = fullText;
+                } else if (btnElement.classList.contains('isVisible')) {
+                    btnElement.innerHTML = 'mehr ansehen';
+                    btnElement.classList.replace('isVisible', 'isHidden')
+                    memberEl.innerHTML = visibleText + dots;
+                }
+            })
         }
     }
 }
