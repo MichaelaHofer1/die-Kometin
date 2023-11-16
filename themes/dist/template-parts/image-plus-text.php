@@ -1,6 +1,12 @@
 <?php
-include 'loops/anchor.php';
-include 'loops/class.php';
+$anchor = '';
+if(!empty($block['anchor'])){
+    $anchor = 'id="' . esc_attr($block['anchor']) . '"';
+}
+$class_name = '';
+if(!empty($block['className'])){
+    $class_name .= ' ' . esc_attr($block['className']);
+}
 ?>
 
 <?php
@@ -40,7 +46,7 @@ if ($sectionTextImg['form'] == 'round') {
 
 <section class="img-and-text">
 
-    <div class="paragraphs">
+    <div class="paragraphs <?php echo $class_name; echo $anchor ?>">
         <div class="para-headline-container">
             <h2 class="<?php echo $headlineYEs; echo $border;
             echo $position;

@@ -2,6 +2,7 @@
 .slideshow-container {
   height: 530px;
   width: 530px;
+  max-width: 100%;
   position: relative;
   overflow: hidden;
   margin: 0 auto;
@@ -17,7 +18,7 @@
     img {
       height: 100%;
       width: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
 }

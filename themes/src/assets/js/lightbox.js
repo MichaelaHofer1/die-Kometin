@@ -20,7 +20,7 @@ const removeLightbox = function () {
     lightboxContainer.addEventListener('click', function () {
         lightboxContainer.classList.remove('lightbox-container--active');
 
-        pictures.forEach((img, i) => {
+        pictures.forEach((img) => {
             img.classList.remove('delay')
             img.classList.remove('big')
             img.parentElement.classList.remove('slider-container-delay');

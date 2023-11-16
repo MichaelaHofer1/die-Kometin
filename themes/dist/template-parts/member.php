@@ -1,6 +1,12 @@
 <?php
-include 'loops/anchor.php';
-include 'loops/class.php';
+$anchor = '';
+if (!empty($block['anchor'])) {
+    $anchor = 'id="' . esc_attr($block['anchor']) . '"';
+}
+$class_name = '';
+if (!empty($block['className'])) {
+    $class_name .= ' ' . esc_attr($block['className']);
+}
 ?>
 
 <?php
@@ -14,8 +20,7 @@ if ($sectionMember['position'] == 'img-left') {
     $positionImg = ' __img-left';
 }
 ?>
-
-    <section class="member">
+    <section class="member <?php echo $class_name; echo $anchor ?>">
         <div class="paragraphs">
             <h3 class="member-name">
                 <?php echo $memberName['name']; ?>
@@ -26,7 +31,6 @@ if ($sectionMember['position'] == 'img-left') {
                 <p class="member-description"><?php echo $sectionMember['description']; ?></p>
                 <span class="btn-show-more">mehr ansehen</span>
             </div>
-
             <?php
             $rows = $sectionMember['responsibility_list'];;
             if ($rows) {
@@ -52,5 +56,4 @@ if ($sectionMember['position'] == 'img-left') {
             <span class="color2" style="border-color:<?php echo $memberImg['border_2']; ?>"></span>
         </div>
     </section>
-
 <?php

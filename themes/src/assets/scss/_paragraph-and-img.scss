@@ -4,20 +4,15 @@
 .paragraphs {
   display: flex;
   flex-direction: column;
-  /*padding: 5em 5%;*/
 
   @media screen and (min-width: $big-tablet-breakpoint) {
     flex-direction: row;
-  }
-  @media screen and (min-width: $desktop-breakpoint) {
-    /*padding:  5em 8%;*/
   }
 
   .para-headline-container {
     display: flex;
     flex-direction: column;
     flex: 1 1 0;
-    /*padding: 0 3em;*/
   }
 
   .paragraph-img {
@@ -56,9 +51,7 @@
 
       img {
         object-fit: cover;
-
       }
-
     }
     &.__img-left {
       order: -1;

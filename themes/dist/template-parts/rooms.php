@@ -1,6 +1,12 @@
 <?php
-include 'loops/anchor.php';
-include 'loops/class.php';
+$anchor = '';
+if(!empty($block['anchor'])){
+    $anchor = 'id="' . esc_attr($block['anchor']) . '"';
+}
+$class_name = '';
+if(!empty($block['className'])){
+    $class_name .= ' ' . esc_attr($block['className']);
+}
 ?>
 
 <?php
@@ -13,8 +19,7 @@ if ($sectionRooms['position'] == 'img-left') {
     $positionImg = ' __img-left';
 }
 ?>
-
-    <section class="member room">
+    <section class="member room <?php echo $class_name; echo $anchor ?>">
         <div class="paragraphs">
             <h3 class="member-name"><?php echo $roomName['name']; ?></h3>
             <p><?php echo $roomName['size']; ?></p>
@@ -30,5 +35,4 @@ if ($sectionRooms['position'] == 'img-left') {
             <div class="lightbox-toggle"></div>
         </div>
     </section>
-
 <?php

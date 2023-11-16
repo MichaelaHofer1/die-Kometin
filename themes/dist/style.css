@@ -1,7 +1,7 @@
 /*!
 Theme Name: die Kometin Website
 Author: Michaela Hofer
-Description: Website Kometin
+Description: Website des Kulturvereins "die Kometin"
 Version: 1.0.0
 Text Domain: kometin
 */
@@ -67,7 +67,7 @@ a {
   transition: color 150ms linear;
 }
 a:active {
-  color: #182980;
+  color: #000022;
 }
 
 li,
@@ -99,12 +99,12 @@ img {
 }
 
 ::-moz-selection {
-  color: #182980;
+  color: #000022;
   background-color: #ffda00;
 }
 
 ::selection {
-  color: #182980;
+  color: #000022;
   background-color: #ffda00;
 }
 
@@ -152,7 +152,7 @@ img {
   right: 0;
   background-color: #000020;
   margin: 0;
-  padding: 25% 0;
+  padding: 15% 0;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -250,8 +250,12 @@ img {
   }
 }
 #nav-main .sub-menu li {
-  height: 65px;
   justify-content: center;
+}
+@media screen and (min-width: 1200px) {
+  #nav-main .sub-menu li {
+    height: 65px;
+  }
 }
 #nav-main .sub-menu a {
   line-height: 0.5em;
@@ -502,6 +506,9 @@ img {
 #nav-footer ul li {
   padding: 0 1em;
 }
+#nav-footer ul li a:hover {
+  color: #ffda00;
+}
 
 .social-icons {
   font-size: 1.5em;
@@ -514,6 +521,7 @@ img {
   color: #ffda00;
 }
 
+/*to-top-Button*/
 #to-top {
   z-index: 1000;
   padding: 1em;
@@ -522,7 +530,7 @@ img {
   height: 80px;
   width: 80px;
   background-color: #ffda00;
-  color: #182980;
+  color: #000022;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -574,6 +582,7 @@ img {
   transform: rotateY(-335deg) skew(-8deg) translate(0, 1px);
 }
 
+/*show-more-btn (when text is to long)*/
 .show-more-btn,
 .show-less-btn {
   color: #888;
@@ -585,6 +594,7 @@ img {
   color: #555;
 }
 
+/*standard-Button*/
 .standard-btn {
   display: block;
   text-align: center;
@@ -604,14 +614,14 @@ img {
   padding: 0.8em 1em;
   margin: 0 auto;
   max-width: 300px;
-  border: 1px solid #182980;
+  border: 1px solid #000022;
   position: relative;
   background-color: #ffda00;
   transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
 }
 .standard-btn a:hover {
   color: #ffda00;
-  background-color: #182980;
+  background-color: #000022;
   border-color: #ffda00;
 }
 .standard-btn a:hover::before {
@@ -698,13 +708,6 @@ img {
   width: 100%;
 }
 
-/*
-#particles-js {
-  height: 100vh;
-  width: 100vw;
-  background-image: url("") ;
-}
-*/
 #nav-bar > #particles-js {
   transform: translateY(-100%);
   z-index: -1;
@@ -875,23 +878,16 @@ h1.headline-h1__border,
 .paragraphs {
   display: flex;
   flex-direction: column;
-  /*padding: 5em 5%;*/
 }
 @media screen and (min-width: 1000px) {
   .paragraphs {
     flex-direction: row;
   }
 }
-@media screen and (min-width: 1200px) {
-  .paragraphs {
-    /*padding:  5em 8%;*/
-  }
-}
 .paragraphs .para-headline-container {
   display: flex;
   flex-direction: column;
   flex: 1 1 0;
-  /*padding: 0 3em;*/
 }
 .paragraphs .paragraph-img {
   flex: 1 1 0;
@@ -975,7 +971,7 @@ h1.headline-h1__border,
 }
 .member .paragraphs a {
   font-style: italic;
-  color: #182980;
+  color: #000022;
   padding: 1em 0;
 }
 .member .paragraph-img:not(.big) {
@@ -1337,7 +1333,7 @@ h1.headline-h1__border,
 .custom-file a {
   position: relative;
   padding-bottom: 0.5em;
-  color: #182980;
+  color: #000022;
   font-size: 16px;
 }
 .standard-link a::before,
@@ -1376,6 +1372,7 @@ h1.headline-h1__border,
 .slideshow-container {
   height: 530px;
   width: 530px;
+  max-width: 100%;
   position: relative;
   overflow: hidden;
   margin: 0 auto;
@@ -1391,8 +1388,8 @@ h1.headline-h1__border,
 .slideshow-container .slide img {
   height: 100%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .dots {
@@ -1417,9 +1414,34 @@ h1.headline-h1__border,
 
 .animate {
   opacity: 0;
-  transition: opacity 800ms ease-in;
+  transition: opacity 600ms ease-in;
 }
 
 .animated {
   opacity: 1;
+}
+
+#error-page .error-message {
+  line-height: 1;
+  font-family: Sarabun, sans-serif;
+  font-size: 1.1em;
+  padding: 4em 0 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+#error-page #page-headline span {
+  font-size: 6rem;
+  padding-bottom: 2rem;
+  display: block;
+  font-family: "Amatic SC", sans-serif;
+}
+#error-page .btn-back-home {
+  padding-top: 3em;
+  font-size: 1.3rem;
+}
+@media screen and (min-width: 1200px) {
+  #error-page .error-message {
+    padding-top: 10em;
+  }
 }

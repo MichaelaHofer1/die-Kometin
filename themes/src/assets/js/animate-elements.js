@@ -17,7 +17,6 @@ export const isInViewport = function () {
         }
     }
 }
-
 export const addAnimationClass = function () {
     const addClassAnimate = document.querySelectorAll('div, h2, h3, section > li, p');
 

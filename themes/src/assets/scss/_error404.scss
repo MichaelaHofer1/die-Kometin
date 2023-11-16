@@ -1,0 +1,34 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+#error-page {
+  .error-message {
+    line-height: 1;
+    font-family: Sarabun, sans-serif;
+    font-size: 1.1em;
+    padding: 4em 0 0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  #page-headline {
+    span {
+      font-size: 6rem;
+      padding-bottom: 2rem;
+      display: block;
+      font-family: "Amatic SC", sans-serif;
+    }
+  }
+
+  .btn-back-home {
+    padding-top: 3em;
+    font-size: 1.3rem;
+  }
+
+  @media screen and (min-width: $desktop-breakpoint) {
+    .error-message {
+      padding-top: 10em;
+    }
+  }
+}

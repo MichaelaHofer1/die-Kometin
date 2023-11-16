@@ -11,8 +11,6 @@ h1.headline-h1__border,
   }
 }
 
-
-
 .headline-h1,
 .headline-h1__border {
   font-family: Bellefair, sans-serif;
@@ -39,7 +37,6 @@ h1.headline-h1__border,
     padding: 1.3em 1em;
     @include border_colors(20deg, 355deg, 0, 0, 5px, 0px);
   }
-
 }
 
 #comet-container h1,

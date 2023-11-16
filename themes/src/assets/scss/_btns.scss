@@ -1,6 +1,7 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+/*to-top-Button*/
 #to-top {
   z-index: 1000;
   padding: 1em;
@@ -45,7 +46,7 @@
   }
 }
 
-
+/*show-more-btn (when text is to long)*/
 .show-more-btn,
 .show-less-btn {
   color: #888;
@@ -57,6 +58,7 @@
   }
 }
 
+/*standard-Button*/
 .standard-btn {
   display: block;
   text-align: center;

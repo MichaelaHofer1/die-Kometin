@@ -1,5 +1,4 @@
 'use strict';
-
 // Gallery Sliders
 const slider = function (numberOfSlideShow) {
     //const slides = document.querySelectorAll('.slide');
@@ -38,7 +37,6 @@ const slider = function (numberOfSlideShow) {
         slideOfOneSlider.forEach( (s, i) =>
             s.style.transform = `translateX(${100 * (i-slide)}%)`)
     }
-
 
     // next slide
     const nextSlide = function () {
@@ -94,7 +92,6 @@ const slider = function (numberOfSlideShow) {
         sliderInterval = null;
     }
 
-
     const lightboxContainer = document.querySelector('.lightbox-container--active');
 
     if (lightboxContainer) {
@@ -120,4 +117,3 @@ if (sliderExists) {
         slider(i)
     })
 }
-

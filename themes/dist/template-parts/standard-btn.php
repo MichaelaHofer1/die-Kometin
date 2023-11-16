@@ -1,9 +1,13 @@
 <?php
-include 'loops/anchor.php';
-include 'loops/class.php';
-?>
+$anchor = '';
+if (!empty($block['anchor'])) {
+    $anchor = 'id="' . esc_attr($block['anchor']) . '"';
+}
+$class_name = '';
+if (!empty($block['className'])) {
+    $class_name .= ' ' . esc_attr($block['className']);
+}
 
-<?php
 $standardBtn = get_field('button');
 $position = '';
 $size = '';
@@ -18,11 +22,11 @@ if ($standardBtn['font-size'] == 'small') {
 } elseif ($standardBtn['font-size'] == 'big') {
     $position = '';
 }
-
 ?>
 
-<div class="standard-btn<?php echo $position; echo $size; ?>">
-        <a href="<?php echo $standardBtn['link']; ?> "><?php echo $standardBtn['btn-text']; ?></a>
-
+<div class="standard-btn<?php echo $position;
+echo $size;
+echo $class_name;
+echo $anchor ?>">
+    <a href="<?php echo $standardBtn['link']; ?> "><?php echo $standardBtn['btn-text']; ?></a>
 </div>
-

@@ -1,19 +1,24 @@
 <?php
-include 'loops/anchor.php';
-include 'loops/class.php';
-?>
-
-<?php
+$anchor = '';
+if (!empty($block['anchor'])) {
+    $anchor = 'id="' . esc_attr($block['anchor']) . '"';
+}
+$class_name = '';
+if (!empty($block['className'])) {
+    $class_name .= ' ' . esc_attr($block['className']);
+}
 $sectionList = get_field('list');
 $listStyle = ' __bullet-point';
 ?>
-
-<section class="list">
+<section class="list <?php echo $class_name;
+echo $anchor ?>">
     <?php
     $rows = $sectionList['input'];
     if ($rows) {
-        ?>
-        <ul class="<?php if ($sectionList['list-style']) { echo $listStyle; } ?>">
+    ?>
+    <ul class="<?php if ($sectionList['list-style']) {
+        echo $listStyle;
+    } ?>">
         <?php
         foreach ($rows as $row) {
             echo '<li class="paragraph">';
@@ -25,11 +30,9 @@ $listStyle = ' __bullet-point';
             ?>
             <p><?php echo $row['text']; ?></p>
             <?php
-
             echo '</li>';
         }
         echo '</ul>';
-    }
-    ?>
-
+        }
+        ?>
 </section>

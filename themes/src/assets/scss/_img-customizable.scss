@@ -1,7 +1,6 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-
 .customizeable-img {
   padding: 0 2em;
   display: flex;
@@ -31,5 +30,4 @@
   @include small-img();
   @include medium-img();
   @include big-img();
-
 }

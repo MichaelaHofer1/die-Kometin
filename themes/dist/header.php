@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
 </head>
-<body <?php body_class( ); ?>>
+<body <?php body_class(); ?>>
 <a href="#content" class="screen-reader-text"><?php _e('Zum Inhalt springen', 'kometin') ?></a>
 <nav id="nav-bar">
     <div class="container" id="small-container">
         <div id="logo">
 
             <?php
-            if(function_exists('the_custom_logo')){
+            if (function_exists('the_custom_logo')) {
                 the_custom_logo();
             }
             ?>
@@ -26,7 +26,7 @@
         </label>
 
         <?php
-        wp_nav_menu( array(
+        wp_nav_menu(array(
             'theme-location' => 'primary',
             'container' => false,
             'menu_class' => 'nav-menu',

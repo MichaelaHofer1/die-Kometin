@@ -1,7 +1,6 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-
 .lightbox-container--active {
   display: block;
   position: fixed;
@@ -83,4 +82,3 @@
       max-height: 100%;
     }
   }
-

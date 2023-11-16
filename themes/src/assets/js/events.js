@@ -1,7 +1,6 @@
 'use strict';
 // mobilizon class hinzufügen
-
- const mobilizonSection = document.querySelectorAll('.connector-mobilizon_events-list')
+const mobilizonSection = document.querySelectorAll('.connector-mobilizon_events-list')
 export const mobilizonDisplay = function () {
     if(mobilizonSection) {
         mobilizonSection.forEach((list, i) => {
@@ -10,7 +9,4 @@ export const mobilizonDisplay = function () {
         })
     }
 }
-
 mobilizonDisplay()
-
-
