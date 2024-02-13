@@ -41,6 +41,24 @@
                 <span class="screen-reader-text"><<?php _e('Send an Email', 'kometin') ?></span>
             </a>
         <?php endif; ?>
+
+        <?php if ($social_links['signal']):
+            $signal = $social_links['signal'];
+            ?>
+            <a href="<?php echo $signal['signal-link']; ?>" target="_blank">
+                <img src="<?php echo wp_get_attachment_image($signal['signal-icon'], 'small') ?>
+                <span class="screen-reader-text"><<?php _e('Follow on Signal', 'kometin') ?></span>
+            </a>
+        <?php endif; ?>
+
+        <?php if ($social_links['mobilizon']):
+            $mobilizon = $social_links['mobilizon'];
+            ?>
+            <a class="mobilizon" href="<?php echo $mobilizon['mobilizon-link']; ?>" target="_blank">
+                <img  src="<?php echo wp_get_attachment_image($mobilizon['mobilizon-icon'], 'small') ?>
+                <span class="screen-reader-text"><<?php _e('Follow on Mobilizon', 'kometin') ?></span>
+            </a>
+        <?php endif; ?>
     </div>
     <div class="copyright">
         <?php

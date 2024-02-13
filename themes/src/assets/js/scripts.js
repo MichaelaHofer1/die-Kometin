@@ -7,6 +7,7 @@ function jsLoaded() {
 }
 
 import "./nav"
+import "./slideshow"
 import {addAnimationClass} from "./animate-elements";
 import {isInViewport} from "./animate-elements";
 import {showToTopBtn} from "./btn-to-top";
@@ -14,7 +15,7 @@ import {homeHeadline} from "./headline-home";
 import {mobilizonDisplay} from "./events";
 import {readMore} from  "./shorten-text";
 import "./lightbox"
-import "./slideshow"
+
 
 document.addEventListener('DOMContentLoaded', function () {
     jsLoaded()
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     readMore()
     addAnimationClass()
     isInViewport()
+
 }, false)
 
 document.addEventListener('scroll', function () {

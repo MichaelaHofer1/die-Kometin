@@ -24,6 +24,10 @@ $counter = 1;
             endforeach;
         endif; ?>
         <div class="dots"></div>
+        <div class="arrows-container">
+            <div class="arrow-left"><?php echo wp_get_attachment_image( $pictures['arrow-prev'], 'medium' ); ?></div>
+            <div class="arrow-right"><?php echo wp_get_attachment_image( $pictures['arrow-next'], 'medium' ); ?></div>
+        </div>
     </div>
     <div class="lightbox-container">
         <div class="lightbox-toggle"></div>

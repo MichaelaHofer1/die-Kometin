@@ -1,7 +1,8 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-.member {
+.member,
+.friends {
   @media screen and (min-width: $tablet-breakpoint) {
     position: relative;
     display: flex;

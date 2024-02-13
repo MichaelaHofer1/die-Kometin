@@ -66,8 +66,18 @@
   a {
     margin: .2em;
 
+    &.mobilizon {
+      margin: 0;
+    }
+
     &:hover {
       color: $test-color;
+    }
+
+    > img {
+      height: 25px;
+      width: 25px;
+      filter: grayscale(1);
     }
   }
 }

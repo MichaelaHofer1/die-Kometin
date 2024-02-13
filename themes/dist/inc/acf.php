@@ -137,6 +137,24 @@ add_action('acf/init', function () {
 add_action('acf/init', function () {
     if (function_exists('acf_register_block_type')) {
         acf_register_block_type(array(
+            'name' => 'Freundinnen',
+            'title' => __('Freundinnen', 'kometin'),
+            'description' => __('Das ist ein Block für neue Freundinnen', 'kometin'),
+            'supports' => array('anchor' => false),
+            'category' => 'kometin',
+            'keywords' => array('Bild', 'kometin', 'img', 'freund', 'friends', 'image', 'Freunde', 'Freundinnen'),
+            'post_type' => array('page'),
+            'align' => false,
+            'mode' => false,
+            'icon' => 'heart',
+            'render_template' => 'template-parts/friends.php',
+        ));
+    }
+});
+
+add_action('acf/init', function () {
+    if (function_exists('acf_register_block_type')) {
+        acf_register_block_type(array(
             'name' => 'Räume',
             'title' => __('Räume', 'kometin'),
             'description' => __('Das ist ein Block für die Räume', 'kometin'),
@@ -219,6 +237,24 @@ add_action('acf/init', function () {
             'mode' => false,
             'icon' => 'images-alt2',
             'render_template' => 'template-parts/slideshow.php',
+        ));
+    }
+});
+
+add_action('acf/init', function () {
+    if (function_exists('acf_register_block_type')) {
+        acf_register_block_type(array(
+            'name' => 'Bildergalerie',
+            'title' => __('Bildergalerie', 'kometin'),
+            'description' => __('Das ist eine Bildergalerie', 'kometin'),
+            'supports' => array('anchor' => false),
+            'category' => 'kometin',
+            'keywords' => array('galerie', 'kometin', 'Slideshow', 'slider'),
+            'post_type' => array('page'),
+            'align' => false,
+            'mode' => false,
+            'icon' => 'images-alt2',
+            'render_template' => 'template-parts/img-gallery.php',
         ));
     }
 });

@@ -10,13 +10,19 @@ const slider = function (numberOfSlideShow) {
     })
     const currentDotContainer = document.querySelector(`.dotContainer--${numberOfSlideShow}`)
 
+    const arrowContainer = document.querySelectorAll('.arrows-container')
+    arrowContainer.forEach(function (cur, i) {
+        cur.classList.add(`arrowContainer--${i}`)
+    })
+    const currentArrowContainer = document.querySelector(`.arrowContainer--${numberOfSlideShow}`)
+
     let curSlide = 0
     let maxSlide = slideOfOneSlider.length
 
     // creating Dots and active Dot
     const createDots = function () {
         for (let i = 0; i < maxSlide; i++) {
-            currentDotContainer.insertAdjacentHTML('beforeend',`<button class="dots__dot" data-slide="${i}"></button>`)
+            currentDotContainer.insertAdjacentHTML('beforeend', `<button class="dots__dot" data-slide="${i}"></button>`)
         }
     }
 
@@ -25,22 +31,21 @@ const slider = function (numberOfSlideShow) {
         const dotActive = currentDotContainer.querySelector(`.dots__dot[data-slide="${slide}"]`)
 
         dots.forEach(dot => dot.classList.remove('.dots__dot--active'));
-        dots.forEach(dot => dot.style.backgroundColor = '#5b5b5b')
+        dots.forEach(dot => dot.style.backgroundColor = '#fff')
 
         dotActive.classList.add('.dots__dot--active')
-        dotActive.style.backgroundColor = 'white'
-
+        dotActive.style.backgroundColor = '#ffda00'
     };
 
     // go to slide
     const goToSlide = function (slide) {
-        slideOfOneSlider.forEach( (s, i) =>
-            s.style.transform = `translateX(${100 * (i-slide)}%)`)
+        slideOfOneSlider.forEach((s, i) =>
+            s.style.transform = `translateX(${100 * (i - slide)}%)`)
     }
 
     // next slide
     const nextSlide = function () {
-        if(curSlide === maxSlide - 1) {
+        if (curSlide === maxSlide - 1) {
             curSlide = 0;
         } else {
             curSlide++
@@ -51,7 +56,7 @@ const slider = function (numberOfSlideShow) {
 
     // previous slide
     const prevSlide = function () {
-        if ( curSlide === 0) {
+        if (curSlide === 0) {
             curSlide = maxSlide - 1;
         } else {
             curSlide--
@@ -68,12 +73,24 @@ const slider = function (numberOfSlideShow) {
     init();
 
     document.addEventListener('keydown', function (e) {
-        if(e.key === 'ArrowLeft') prevSlide();
-        if(e.key === 'ArrowRight') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
     })
 
+
+    document.addEventListener('touchstart', nextSlide);
+    //document.addEventListener('touchmove', nextSlide);
+    //document.addEventListener('touchend', nextSlide);
+
+
+    const leftArrowImg = currentArrowContainer.querySelector('.arrow-left');
+    const rightArrowImg = currentArrowContainer.querySelector('.arrow-right');
+    leftArrowImg.addEventListener('click', prevSlide)
+    rightArrowImg.addEventListener('click', nextSlide)
+
+
     currentDotContainer.addEventListener('click', function (e) {
-        if(e.target.classList.contains('dots__dot')) {
+        if (e.target.classList.contains('dots__dot')) {
             const {slide} = e.target.dataset;
             goToSlide(slide)
             activateDot(slide)
@@ -83,7 +100,7 @@ const slider = function (numberOfSlideShow) {
     ///// stopping Slider when hovering, starting when non-hovering
     let sliderInterval;
     const startRotation = function () {
-        if(!sliderInterval) {
+        if (!sliderInterval) {
             sliderInterval = setInterval(nextSlide, 3000);
         }
     }
@@ -104,10 +121,9 @@ const slider = function (numberOfSlideShow) {
     slideContainer.addEventListener('click', stopRotation)
 
 
-    slideContainer.addEventListener('mouseover', function() {
+    slideContainer.addEventListener('mouseover', function () {
         slideContainer.style.cursor = 'pointer'
     })
-
 }
 
 const sliderExists = document.querySelector('.slideshow-container') || false

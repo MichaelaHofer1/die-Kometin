@@ -1,0 +1,38 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.friends {
+  margin-bottom: 5em;
+
+  h3 {
+    font-size: 2.5em;
+    line-height: 1em;
+  }
+
+  .paragraph-img:not(.big) {
+    @media screen and (min-width: $tablet-breakpoint) {
+      margin: 1em 5em 1em 2em;
+    }
+    @media screen and (min-width: $desktop-breakpoint) {
+      margin: 1em 3em 1em 10em;
+    }
+
+    img {
+      max-width: 150px;
+      max-height: 150px;
+    }
+  }
+
+  .responsibilities li {
+    list-style: none;
+    padding: .5em 0 0;
+
+    a {
+      color: #0000aa;
+
+      &:hover {
+        color: rgba(0, 0, 170, 0.5);
+      }
+    }
+  }
+}

@@ -12,27 +12,33 @@
   .para-headline-container {
     display: flex;
     flex-direction: column;
-    flex: 1 1 0;
+    width: 85%;
+    margin: 0 auto;
+
+    @media screen and (min-width: $big-tablet-breakpoint) {
+      width: 50%;
+    }
   }
 
   .paragraph-img {
-    flex: 1 1 0;
+    width: 100%;
     text-align: center;
     padding: 1em 0;
     margin: auto auto;
     order: 1;
 
-    @media screen and (min-width: $tablet-breakpoint) {
+    @media screen and (min-width: $big-tablet-breakpoint) {
       padding: 1em 3em;
-      text-align: left;
+      text-align: right;
+      width: 50%;
     }
 
     &.__round {
       img {
         border-radius: 50%;
-        width: 300px;
-        height: 300px;
-        min-width: 300px;
+        width: 250px;
+        height: 250px;
+        min-width: 250px;
 
         @media screen and (min-width: $small-tablet-breakpoint) {
           width: 350px;
@@ -44,8 +50,8 @@
           height: 350px;
         }
         @media screen and (min-width: $biggest-breakpoint) {
-          width: 550px;
-          height: 550px;
+          width: 500px;
+          height: 500px;
         }
       }
 
