@@ -44,34 +44,8 @@
   }
 }
 
-.slider-container-delay {
-  .dots {
-    z-index: 1002;
-    position: fixed;
-  }
-
-  .arrows-container .arrow-left > img,
-  .arrows-container .arrow-right > img {
-    position: fixed;
-    z-index: 1002;
-
-    @media screen and (min-width: $small-tablet-breakpoint) {
-      margin: auto 0em;
-    }
-    @media screen and (min-width: $big-tablet-breakpoint) {
-      margin: auto 2em;
-    }
-    @media screen and (min-width: $desktop-breakpoint) {
-      margin: auto 8em;
-    }
-    @media screen and (min-width: $biggest-breakpoint) {
-      margin: auto 15em;
-    }
-  }
-
-  .slide {
-    z-index: 1002;
-  }
+.slider-container-delay > .slide {
+  z-index: 1002;
 }
 
 .delay {
@@ -107,4 +81,84 @@
     max-width: 100%;
     max-height: 100%;
   }
+}
+
+////////////////////////////////////
+/*splide slider*/
+///////////////////////////////////
+
+.splide.slideshow-gallery-imgs--hidden {
+  display: block;
+  position: fixed;
+  @include topBottomRightLeft(0, 0, 0, 0);
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(3px);
+  z-index: 1001;
+  transition: opacity 300ms ease-in-out;
+
+  .splide__slide {
+    height: 100%;
+    margin: auto 0;
+  }
+  img {
+    max-height: 90%;
+    max-width: 85%;
+    object-fit: cover;
+  }
+}
+
+.btn-close-lb {
+  height: 70px;
+  width: 70px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1002;
+  cursor: pointer;
+
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 70px;
+    width: 2px;
+    top: 0;
+    right: 50%;
+    background-color: $background-color;
+    z-index: 1003;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+
+#slideshow.lightbox-hidden {
+  ~ .btn-close-lb,
+  .splide.slideshow-gallery-imgs--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+#slideshow.lightbox-active {
+  ~ .btn-close-lb,
+  .splide.slideshow-gallery-imgs--hidden  {
+    display: block;
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.slideshow-gallery-imgs--hidden {
+  position: absolute;
 }
