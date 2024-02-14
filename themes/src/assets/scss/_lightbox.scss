@@ -106,7 +106,7 @@
   img {
     max-height: 90%;
     max-width: 85%;
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 
@@ -161,4 +161,14 @@
 
 .slideshow-gallery-imgs--hidden {
   position: absolute;
+
+  .splide__track {
+    height: 100vh;
+  }
+
+  .splide__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

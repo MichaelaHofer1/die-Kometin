@@ -25,6 +25,12 @@ if ($images): ?>
                 </ul>
             </div>
         </div>
+        <div class="circle-cont">
+            <div class="decoration-circles">
+                <span class="circle1"></span>
+                <span class="circle2"></span>
+            </div>
+        </div>
 
 
         <div class="splide slideshow-gallery-imgs--hidden <?php echo $class_name ?>" <?php echo $anchor; ?>
