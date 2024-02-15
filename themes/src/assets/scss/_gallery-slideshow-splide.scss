@@ -17,6 +17,29 @@
     justify-content: center;
     padding: 0;
 
+    .gallery-imgs--visible {
+      &.hidden {
+        display: none;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        img {
+          transform: scale(1.15);
+        }
+      }
+
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        transition: transform 1s ease-in-out;
+      }
+    }
+  }
+
+  .gallery.fancy-gallery ul {
     @media screen and (min-width: $tiny-breakpoint) {
       grid-template-columns: 150px 150px 150px;
     }
@@ -33,25 +56,14 @@
       height: 150px;
       width: 150px;
 
-/*      &:nth-child(odd) {
-        justify-self: flex-end;
-      }
-
-      &:nth-child(even) {
-        justify-self: flex-start;
-      }*/
-
       &[data-number='2'] {
         grid-area: 2/1/2/3;
         width: calc(150px * 2 + 10px);
       }
+
       &[data-number='5'] {
         grid-area: 4/2/6/1;
         height: calc(150px * 2 + 10px);
-      }
-
-      &.hidden {
-        display: none;
       }
 
       @media screen and (min-width: $tiny-breakpoint) {
@@ -84,7 +96,7 @@
       @media screen and (min-width: $tablet-breakpoint) {
         &[data-number='6'] {
           grid-area: 1/4/3/4;
-          width:calc(150px * 2 + 10px);
+          width: calc(150px * 2 + 10px);
           height: calc(150px * 2 + 10px);
         }
         &[data-number='7'] {
@@ -128,22 +140,32 @@
           width: calc(200px * 2 + 10px);
         }
       }
+    }
+  }
 
 
-      &:hover {
-        cursor: pointer;
+  .gallery.grid {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+
+      .gallery-imgs--visible {
+        overflow: hidden;
+        height: 250px;
+        width: 250px;
+
+        @media screen and (min-width: $tablet-breakpoint) {
+          height: 350px;
+          width: 350px;
+        }
 
         img {
-          transform: scale(1.15);
+          object-fit: contain;
         }
-      }
-
-      img {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-        transition: transform 1s ease-in-out;
       }
     }
   }
 }
+

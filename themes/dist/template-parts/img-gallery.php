@@ -10,11 +10,18 @@ if (!empty($block['className'])) {
 $gallery = get_field('img-gallery');
 $counter = 0;
 $images = $gallery['imgs'];
+$style = 'fancy-gallery';
+
+$galleryStyle = $gallery['check-gallery-style'];
+if($galleryStyle == 'grid') {
+    $style = 'grid';
+}
+
 
 if ($images): ?>
     <section id="slideshow" class="lightbox-hidden">
-        <div id="gallery-cont">
-            <div class="gallery">
+        <div id="gallery-cont" class="" >
+            <div class="gallery <?php echo $style ?>">
                 <ul>
                     <?php foreach ($images as $image_id): ?>
                         <li class="gallery-imgs--visible" data-number="<?php echo $counter; ?>">
