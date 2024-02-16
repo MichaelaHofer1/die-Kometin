@@ -996,7 +996,6 @@ h1.headline-h1__border,
 }
 .member .paragraphs a,
 .friends .paragraphs a {
-  font-style: italic;
   color: #000022;
   padding: 1em 0;
 }
@@ -1212,34 +1211,72 @@ h1.headline-h1__border,
 
 .friends {
   margin-bottom: 5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  max-width: initial;
+}
+.friends .friend {
+  margin: 3em 1em 0;
+  padding: 1em;
+  border-radius: 3px;
+  box-shadow: 0 0 3px gray;
 }
 .friends h3 {
   font-size: 2.5em;
   line-height: 1em;
+  text-align: center;
 }
-@media screen and (min-width: 830px) {
-  .friends .paragraph-img:not(.big) {
-    margin: 1em 5em 1em 2em;
-  }
+.friends .friends-img {
+  padding-bottom: 1em;
 }
-@media screen and (min-width: 1200px) {
-  .friends .paragraph-img:not(.big) {
-    margin: 1em 3em 1em 10em;
-  }
+.friends .friends-img img {
+  height: 150px;
+  width: 150px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 0;
 }
-.friends .paragraph-img:not(.big) img {
-  max-width: 150px;
-  max-height: 150px;
+.friends .paragraphs {
+  width: 325px;
+  text-align: center;
 }
-.friends .responsibilities li {
-  list-style: none;
-  padding: 0.5em 0 0;
+.friends .description-container {
+  order: 1;
+  margin-bottom: 1em;
 }
-.friends .responsibilities li a {
-  color: #0000aa;
+.friends .description-container .member-description {
+  margin: 0;
 }
-.friends .responsibilities li a:hover {
-  color: rgba(0, 0, 170, 0.5);
+.friends .friends-links {
+  color: #000022;
+  transition: opacity 300ms ease-in-out;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 0.5em 0;
+}
+.friends .friends-links li {
+  padding: 0.2em;
+  opacity: 0.65;
+  transition: opacity 300ms ease-in-out;
+}
+.friends .friends-links li:hover {
+  opacity: 1;
+}
+.friends .friends-links li > a {
+  display: inline-block;
+  padding: 0;
+  height: 25px;
+  width: 25px;
+}
+.friends .friends-links li img {
+  height: 20px;
+  width: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 0;
 }
 
 .event-list ul {
@@ -1758,6 +1795,58 @@ h1.headline-h1__border,
 #gallery-cont .gallery.grid ul .gallery-imgs--visible img {
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.tribe-common .tribe-common-form-control-text__input::-moz-placeholder {
+  font-family: Sarabun, sans-serif;
+}
+
+.tribe-common .tribe-common-h1,
+.tribe-common .tribe-common-h2,
+.tribe-common .tribe-common-h3,
+.tribe-common .tribe-common-h4,
+.tribe-common a,
+.tribe-common p,
+.tribe-common button,
+.tribe-common span,
+.tribe-common a.tribe-common-c-btn-border-small,
+.tribe-events .tribe-events-c-view-selector__list-item-text,
+.tribe-common button.tribe-common-c-btn,
+.tribe-common .tribe-common-form-control-text__input::placeholder,
+.tribe-common .tribe-common-b2 {
+  font-family: Sarabun, sans-serif;
+}
+
+.tribe-events .tribe-events-c-search__button,
+.tribe-events button.tribe-events-c-search__button {
+  background-color: #000022;
+  transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
+}
+.tribe-events .tribe-events-c-search__button:hover,
+.tribe-events button.tribe-events-c-search__button:hover {
+  background-color: #ffda00;
+  color: #000022;
+}
+
+.tribe-common .tribe-common-c-btn-border {
+  border-color: #000022;
+  background-color: #fff;
+  color: #000022;
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+  /*&:hover */
+}
+
+.tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:hover {
+  background-color: #000022;
+  color: #ffda00;
+}
+
+.tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button-icon path {
+  fill: #000022;
+  transition: fill 300ms ease-in-out;
+}
+.tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button-icon path:hover {
+  fill: #ffda00;
 }
 
 .animate {

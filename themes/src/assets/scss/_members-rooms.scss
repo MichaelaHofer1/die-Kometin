@@ -37,7 +37,6 @@
     }
 
     a {
-      font-style: italic;
       color: $contrast-color;
       padding: 1em 0;
     }
@@ -128,12 +127,11 @@
     z-index: -1;
   }
 
-  img {
+   img {
     width: 250px;
     height: 250px;
     object-fit: cover;
     border-radius: 50%;
-
 
     @media screen and (min-width: $tablet-breakpoint) {
       width: 300px;

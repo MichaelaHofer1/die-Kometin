@@ -1,0 +1,55 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.tribe-common .tribe-common-h1,
+.tribe-common .tribe-common-h2,
+.tribe-common .tribe-common-h3,
+.tribe-common .tribe-common-h4,
+.tribe-common a,
+.tribe-common p,
+.tribe-common button,
+.tribe-common span,
+.tribe-common a.tribe-common-c-btn-border-small,
+.tribe-events .tribe-events-c-view-selector__list-item-text,
+.tribe-common button.tribe-common-c-btn,
+.tribe-common .tribe-common-form-control-text__input::placeholder,
+.tribe-common .tribe-common-b2 {
+  font-family: Sarabun, sans-serif;
+}
+
+
+.tribe-events .tribe-events-c-search__button,
+.tribe-events button.tribe-events-c-search__button {
+  background-color: $contrast-color;
+  transition: color $standard-animation-time ease-in-out, background-color $standard-animation-time ease-in-out;
+
+  &:hover {
+    background-color: $test-color;
+    color: $contrast-color;
+  }
+}
+
+
+.tribe-common .tribe-common-c-btn-border {
+  border-color: $contrast-color;
+  background-color: $background-color;
+  color: $contrast-color;
+  transition: background-color $standard-animation-time ease-in-out, color $standard-animation-time ease-in-out;
+
+  /*&:hover */
+}
+
+.tribe-events .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button:hover {
+  background-color: $contrast-color;
+  color: $test-color
+}
+
+.tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button-icon path {
+  fill: $contrast-color;
+  transition: fill $standard-animation-time ease-in-out;
+
+  &:hover {
+    fill: $test-color;
+  }
+}
+
