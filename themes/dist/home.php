@@ -2,10 +2,10 @@
 get_header();
 ?>
 
-    <main>
+    <main id="blog-posts" class="content">
         <!--<h2>this is the home.php</h2>-->
-
-        <h1 id="page-headline">
+        <h1 id="page-headline" class="headline-h1__border">
+            <span class="headline-container">
             <?php
             $postsPage = get_option('page_for_posts');
             if (!empty ($postsPage)) {
@@ -14,36 +14,44 @@ get_header();
                 bloginfo('name');
             }
             ?>
+            <span class="color1" style="border-color: #6c0052"></span>
+            <span class="color2" style="border-color: deeppink"></span>
+            </span>
         </h1>
+        <div class="post">
 
-        <?php
-        if (have_posts()) {
-            while (have_posts()) {
-                the_post(); ?>
+            <?php
+            if (have_posts()) {
+                while (have_posts()) {
+                    the_post(); ?>
 
-                <article class="blog-post">
-                    <h2 class="blog-post-title">
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                    </h2>
-                    <div class="meta-data">
-                        <?php
-                        $duration = get_field('blog-data');
-                        if (!empty($duration['end-date'])) {
-                            echo '<p>' . $duration['start-date'];
-                        }
-                        if (!empty($duration['end-date'])) {
-                            echo ' - ' . $duration['end-date'];
-                        }
-                        echo '</p>';
-                        echo '<p>' . the_category(', ') . '</p>';
-                        ?>
-                    </div>
+                    <article class="blog-post">
+                        <div class="meta-data">
+                            <h2 class="blog-post-title">
+                                <?php the_title(); ?>
+                                <a class="blog-link" href="<?php the_permalink(); ?>"></a>
+                            </h2>
+                            <?php
+                            $blogInfo = get_field('blog-data');
+                            if (!empty($blogInfo['start-date'])) {
+                                echo '<p>' . $blogInfo['start-date'];
+                            }
+                            if (!empty($blogInfo['end-date'])) {
+                                echo ' - ' . $blogInfo['end-date'];
+                            }
+                            echo '</p>';
+                            echo '<p>' . the_category(', ') . '</p>';
+                            ?>
+                        </div>
+                        <?php echo wp_get_attachment_image($blogInfo['post-img'], 'medium') ?>
 
-                </article>
-                <?php
+                    </article>
+                    <?php
+                }
             }
-        }
-        ?>
+            ?>
+        </div>
+
     </main>
 <?php
 get_footer();

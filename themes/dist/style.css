@@ -60,6 +60,11 @@ h6 {
   font-weight: 700;
 }
 
+#page-headline {
+  font-size: 3em;
+  color: #000022;
+}
+
 a {
   color: #000;
   text-decoration: none;
@@ -1847,6 +1852,161 @@ h1.headline-h1__border,
 }
 .tribe-events-c-subscribe-dropdown .tribe-events-c-subscribe-dropdown__button-icon path:hover {
   fill: #ffda00;
+}
+
+#single-post-page .blog-header {
+  position: relative;
+  height: 50vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 4em calc(50% - 50vw);
+  padding: 0 5%;
+}
+#single-post-page .blog-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-color: white;
+  opacity: 0.15;
+}
+#single-post-page .blog-header .meta-data {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+}
+@media screen and (min-width: 1000px) {
+  #single-post-page .blog-header .meta-data {
+    left: 10%;
+  }
+}
+#single-post-page .blog-header .meta-data #page-headline {
+  padding-bottom: 0.5rem;
+}
+#single-post-page .blog-header .meta-data > p {
+  margin: 1em 0 0.2em;
+}
+#single-post-page .blog-header .meta-data > a {
+  font-style: italic;
+}
+#single-post-page .blog-header img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 50%;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#single-post-page > p {
+  padding: 0 5%;
+}
+@media screen and (min-width: 1000px) {
+  #single-post-page > p {
+    padding: 0 15%;
+  }
+}
+#single-post-page #slideshow img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#blog-posts #page-headline {
+  text-align: center;
+}
+#blog-posts .post {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.blog-post {
+  position: relative;
+  width: 325px;
+  min-height: 400px;
+  display: flex;
+  align-items: flex-end;
+}
+.blog-post .meta-data {
+  width: 100%;
+  padding: 1em;
+  background-color: rgba(230, 244, 255, 0.7);
+  transition: opacity 300ms ease-in-out, color 300ms ease-in-out, background-color 300ms ease-in-out;
+}
+.blog-post .meta-data:hover {
+  opacity: 0.9;
+  color: #00325a;
+  background-color: rgb(230, 244, 255);
+}
+.blog-post .meta-data h2 {
+  font-family: Bellefair, SansSerif;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+.blog-post .meta-data h2 .blog-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.blog-post .meta-data h2 .blog-link:hover {
+  opacity: 0.75;
+}
+.blog-post .meta-data > p {
+  margin: 0;
+  padding: 0.5em 0;
+}
+.blog-post .meta-data > a {
+  font-size: 0.85em;
+  font-style: italic;
+  position: relative;
+  z-index: 2;
+  padding: 0.5em 0;
+  transition: opacity 300ms ease-in-out;
+}
+.blog-post .meta-data > a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 0;
+  top: 85%;
+  right: 0;
+  background-color: #ffda00;
+  transition: width 300ms ease-in-out;
+}
+@media screen and (min-width: 1200px) {
+  .blog-post .meta-data > a::before {
+    top: 80%;
+  }
+}
+.blog-post .meta-data > a:hover {
+  opacity: 0.75;
+}
+.blog-post .meta-data > a:hover::before {
+  width: 100%;
+  left: 0;
+}
+.blog-post > img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
 }
 
 .animate {

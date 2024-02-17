@@ -8,9 +8,8 @@ $blogInfo = get_field('blog-data');
         <!--<h2>this is the single.php</h2>-->
 
         <div class="blog-header">
-            <h1 id="page-headline"><?php the_title(); ?></h1>
-            <?php echo wp_get_attachment_image($blogInfo['post-img'], 'large'); ?>
             <div class="meta-data">
+                <h1 id="page-headline"><?php the_title(); ?></h1>
                 <?php
                 if (!empty($blogInfo['end-date'])) {
                     echo '<p>' . $blogInfo['start-date'];
@@ -22,6 +21,7 @@ $blogInfo = get_field('blog-data');
                 echo '<p>' . the_category(', ') . '</p>';
                 ?>
             </div>
+            <?php echo wp_get_attachment_image($blogInfo['post-img'], 'large'); ?>
         </div>
 
 

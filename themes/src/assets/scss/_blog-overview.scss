@@ -1,0 +1,88 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+#blog-posts {
+  #page-headline {
+    text-align: center;
+  }
+
+  .post {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+}
+
+
+.blog-post {
+  position: relative;
+  width: 325px;
+  min-height: 400px;
+  display: flex;
+  align-items: flex-end;
+
+  .meta-data {
+    width: 100%;
+    padding: 1em;
+    background-color: rgba(230, 244, 255, 0.7);
+    transition: opacity $standard-animation-time ease-in-out, color $standard-animation-time ease-in-out, background-color $standard-animation-time ease-in-out;
+
+
+    &:hover {
+      opacity: .9 ;
+      color: #00325a;
+      background-color:rgba(230, 244, 255) ;
+    }
+
+    h2 {
+      font-family: Bellefair, SansSerif;
+      margin: 0;
+      padding: 0.5rem 0;
+
+
+      .blog-link {
+        position: absolute;
+        @include topRightBottomLeft(0, 0, 0, 0);
+        z-index: 1;
+
+        &:hover {
+          opacity: .75 ;
+        }
+      }
+    }
+
+    > p {
+      margin: 0;
+      padding: 0.5em 0;
+    }
+
+    > a {
+      font-size: .85em;
+      font-style: italic;
+      position: relative;
+      z-index: 2;
+      padding: 0.5em 0;
+      transition: opacity $standard-animation-time ease-in-out;
+      @include dynamicUnderline(0);
+
+      &:hover {
+        opacity: .75 ;
+
+        &::before {
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  > img {
+    position: absolute;
+    @include topRightBottomLeft(0, 0, 0, 0);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+}
