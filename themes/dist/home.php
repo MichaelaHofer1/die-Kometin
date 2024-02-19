@@ -43,7 +43,7 @@ get_header();
                             echo '<p>' . the_category(', ') . '</p>';
                             ?>
                         </div>
-                        <?php echo wp_get_attachment_image($blogInfo['post-img'], 'medium') ?>
+                        <?php echo wp_get_attachment_image($blogInfo['post-img'], 'large') ?>
 
                     </article>
                     <?php
@@ -51,6 +51,15 @@ get_header();
             }
             ?>
         </div>
+        <div class="pagination-blog">
+            <?php
+            echo paginate_links(array(
+                'prev_text' => __('&laquo; Vorherige', 'textdomain'),
+                'next_text' => __('Nächste &raquo;', 'textdomain'),
+            ));
+            ?>
+        </div>
+
 
     </main>
 <?php

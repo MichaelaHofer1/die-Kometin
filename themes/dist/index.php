@@ -2,9 +2,7 @@
 get_header();
 ?>
     <main>
-        <h2>this is the index.php</h2>
-
-
+        <!--<h2>this is the index.php</h2>-->
         <?php
         if (have_posts()) {
             while (have_posts()) {

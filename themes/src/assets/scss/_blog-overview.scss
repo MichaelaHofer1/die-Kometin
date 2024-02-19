@@ -11,9 +11,10 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
+    max-width: calc(4 * 325px + 3 * 30px ) ;
+    margin: 0 auto;
   }
 }
-
 
 .blog-post {
   position: relative;
@@ -21,18 +22,29 @@
   min-height: 400px;
   display: flex;
   align-items: flex-end;
+  border-radius: 3px;
+  overflow: hidden;
+
+  &:first-of-type {
+    width: 100%;
+
+    @media screen and (min-width: 756px ) {
+      width: calc(2 * 325px + 30px);
+    }
+  }
 
   .meta-data {
     width: 100%;
     padding: 1em;
-    background-color: rgba(230, 244, 255, 0.7);
+    background-color: $contrast-color;
+    color: $background-color;
     transition: opacity $standard-animation-time ease-in-out, color $standard-animation-time ease-in-out, background-color $standard-animation-time ease-in-out;
 
 
     &:hover {
       opacity: .9 ;
-      color: #00325a;
-      background-color:rgba(230, 244, 255) ;
+      color: $test-color;
+      background-color: $contrast-color;
     }
 
     h2 {
@@ -63,6 +75,7 @@
       position: relative;
       z-index: 2;
       padding: 0.5em 0;
+      color: $background-color;
       transition: opacity $standard-animation-time ease-in-out;
       @include dynamicUnderline(0);
 

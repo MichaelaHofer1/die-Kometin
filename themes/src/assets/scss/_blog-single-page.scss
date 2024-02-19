@@ -6,8 +6,7 @@
     position: relative;
     height: 50vh;
     width: 100vw;
-    overflow: hidden;
-    margin: 4em  calc(50% - 50vw);
+    margin: 0 calc(50% - 50vw) 5em;
     padding: 0 5%;
 
 
@@ -22,8 +21,10 @@
 
     .meta-data {
       position: absolute;
-      bottom: 0;
+      bottom: -2em;
       left: 5%;
+      background-color: $contrast-color;
+      padding: 2em 2em 1em;
 
       @media screen and (min-width: $big-tablet-breakpoint) {
         left: 10%;
@@ -31,14 +32,22 @@
 
       #page-headline {
         padding-bottom: 0.5rem;
+        color: $background-color;
       }
 
       > p {
         margin: 1em 0 0.2em;
+        color: $background-color;
       }
 
       > a {
         font-style: italic;
+        color: $background-color;
+        transition: opacity $standard-animation-time ease-in-out;
+
+        &:hover {
+          opacity: .5;
+        }
       }
     }
 

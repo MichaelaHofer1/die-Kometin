@@ -1,0 +1,33 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding-top: 5em;
+  
+  .next-link,
+  .prev-link {
+    max-width: 300px;
+  }
+
+  .next-link {
+    text-align: right;
+  }
+}
+
+.pagination-blog {
+  display: flex;
+  justify-content: center;
+  padding-top: 5em;
+
+  > span,
+  > a {
+    padding: 0 .3em;
+  }
+}
+
+.pagination-text {
+  font-style: italic;
+}
