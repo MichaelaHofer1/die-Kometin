@@ -167,5 +167,40 @@
       }
     }
   }
+
+
+  .gallery.blog {
+    .gallery-imgs--visible {
+      &:hover {
+        cursor: initial;
+        img {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+}
+
+#slideshow.blog-gallery {
+  width: 100%;
+  padding: 5em 5% 0;
+
+  @media screen and (min-width: $big-tablet-breakpoint) {
+    padding: 5em 15% 0;
+  }
+
+  #gallery-cont {
+    width: 100%;
+
+    ul {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+
+      li {
+        max-height: 500px;
+      }
+    }
+  }
 }
 

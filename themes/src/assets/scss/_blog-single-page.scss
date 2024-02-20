@@ -67,7 +67,8 @@
 
   > p,
   .wp-block-columns,
-  > .wp-block-image {
+  > .wp-block-image,
+  > .wp-block-media-text{
       padding: 0  5%;
 
     @media screen and (min-width: $big-tablet-breakpoint) {
@@ -83,4 +84,27 @@
   #slideshow img {
     object-fit: cover;
   }
+}
+
+
+.wp-block-media-text{
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  > .wp-block-media-text__content {
+    padding: 0;
+
+    > p {
+      margin: 0;
+    }
+  }
+
+  &.has-media-on-the-right {
+    grid-template-columns: 1fr 1fr;
+    > .wp-block-media-text__content {
+      padding: 0;
+    }
+  }
+
+
 }

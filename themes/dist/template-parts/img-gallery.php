@@ -18,9 +18,12 @@ if ($gallery) {
     if ($galleryStyle == 'grid') {
         $style = 'grid';
     }
+    if ($galleryStyle == 'blog') {
+        $style = 'blog';
+    }
 
     if ($images): ?>
-        <section id="slideshow" class="lightbox-hidden">
+        <section id="slideshow" class="lightbox-hidden <?php if($style === 'blog'){echo 'blog-gallery'; } ?>">
             <div id="gallery-cont" class="">
                 <div class="gallery <?php echo $style ?>">
                     <ul>
