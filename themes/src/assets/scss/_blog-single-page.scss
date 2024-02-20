@@ -2,6 +2,7 @@
 @use "./mixins" as *;
 
 #single-post-page {
+
   .blog-header {
     position: relative;
     height: 50vh;
@@ -64,12 +65,18 @@
     }
   }
 
-  > p {
+  > p,
+  .wp-block-columns,
+  > .wp-block-image {
       padding: 0  5%;
 
     @media screen and (min-width: $big-tablet-breakpoint) {
       padding: 0 15%;
     }
+  }
+  .wp-block-image >img {
+    text-align: center;
+    width: 100%;
   }
 
 

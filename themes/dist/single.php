@@ -5,8 +5,6 @@ $blogInfo = get_field('blog-data');
 
 ?>
     <main id="single-post-page" class="content">
-        <!--<h2>this is the single.php</h2>-->
-
         <div class="blog-header">
             <div class="meta-data">
                 <h1 id="page-headline"><?php the_title(); ?></h1>
@@ -23,15 +21,11 @@ $blogInfo = get_field('blog-data');
             </div>
             <?php echo wp_get_attachment_image($blogInfo['post-img'], 'large'); ?>
         </div>
-
-
         <?php
         if (have_posts()) {
             while (have_posts()) {
                 the_post();
                 the_content();
-
-
 
                 include(dirname(__FILE__) . '/template-parts/img-gallery.php');
             }
@@ -45,8 +39,6 @@ $blogInfo = get_field('blog-data');
                 <?php next_post_link('%link',  'Nächster Beitrag: ' . '<span class="pagination-text">' . '%title' . '</span>' . ' &raquo;', TRUE); ?>
             </div>
         </div>
-
-
     </main>
 <?php
 get_footer();

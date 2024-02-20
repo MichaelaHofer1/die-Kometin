@@ -31,3 +31,17 @@
 .pagination-text {
   font-style: italic;
 }
+
+div[class*="pagination"]{
+  > span {
+    font-weight: 600;
+  }
+
+  > div,
+  > a {
+    transition: opacity $standard-animation-time ease-in-out;
+    &:hover {
+      opacity: .7;
+    }
+  }
+}

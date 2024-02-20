@@ -2,7 +2,7 @@
 Theme Name: die Kometin Website
 Author: Michaela Hofer
 Description: Website des Kulturvereins "die Kometin"
-Version: 1.0.1
+Version: 2.0.0
 Text Domain: kometin
 */
 /* breakpoints */
@@ -1913,13 +1913,21 @@ h1.headline-h1__border,
   -o-object-fit: cover;
      object-fit: cover;
 }
-#single-post-page > p {
+#single-post-page > p,
+#single-post-page .wp-block-columns,
+#single-post-page > .wp-block-image {
   padding: 0 5%;
 }
 @media screen and (min-width: 1000px) {
-  #single-post-page > p {
+  #single-post-page > p,
+  #single-post-page .wp-block-columns,
+  #single-post-page > .wp-block-image {
     padding: 0 15%;
   }
+}
+#single-post-page .wp-block-image > img {
+  text-align: center;
+  width: 100%;
 }
 #single-post-page #slideshow img {
   -o-object-fit: cover;
@@ -2032,6 +2040,14 @@ h1.headline-h1__border,
   z-index: -1;
 }
 
+.category-title {
+  font-size: 1.5em;
+  text-align: center;
+}
+.category-title > span {
+  font-style: italic;
+}
+
 .pagination {
   display: flex;
   justify-content: space-between;
@@ -2058,6 +2074,18 @@ h1.headline-h1__border,
 
 .pagination-text {
   font-style: italic;
+}
+
+div[class*=pagination] > span {
+  font-weight: 600;
+}
+div[class*=pagination] > div,
+div[class*=pagination] > a {
+  transition: opacity 300ms ease-in-out;
+}
+div[class*=pagination] > div:hover,
+div[class*=pagination] > a:hover {
+  opacity: 0.7;
 }
 
 .animate {
