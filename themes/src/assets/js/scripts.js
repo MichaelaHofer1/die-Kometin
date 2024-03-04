@@ -16,12 +16,12 @@ import {mobilizonDisplay} from "./events";
 import {readMore} from  "./shorten-text";
 import "./lightbox"
 
-
 document.addEventListener('DOMContentLoaded', function () {
     jsLoaded()
     showToTopBtn()
     homeHeadline()
     mobilizonDisplay()
+    category()
     readMore()
     addAnimationClass()
     isInViewport()

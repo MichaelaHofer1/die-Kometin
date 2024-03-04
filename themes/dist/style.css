@@ -74,12 +74,25 @@ a {
 a:active {
   color: #000022;
 }
+a:hover {
+  color: purple;
+}
 
 li,
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+ul:not([class]) {
+  margin: 0 1em;
+  padding: 0 1em;
+}
+
+li:not([class]) {
+  list-style: initial;
+  padding: 0.2em 0;
 }
 
 img {
@@ -1504,41 +1517,40 @@ h1.headline-h1__border,
 }
 
 .standard-link,
-.custom-file {
+#custom-file {
   font-size: 16px;
   font-family: Sarabun, sans-serif;
   text-align: center;
   transition: color 300ms ease-in-out;
 }
 .standard-link.__left,
-.custom-file.__left {
+#custom-file.__left {
   text-align: left;
 }
 .standard-link.__right,
-.custom-file.__right {
+#custom-file.__right {
   text-align: right;
 }
 .standard-link.__small,
-.custom-file.__small {
+#custom-file.__small {
   font-size: 16px;
 }
 .standard-link.__middle,
-.custom-file.__middle {
+#custom-file.__middle {
   font-size: 1.5rem;
 }
 .standard-link.__big,
-.custom-file.__big {
+#custom-file.__big {
   font-size: 2rem;
 }
-.standard-link a,
-.custom-file a {
+
+a {
   position: relative;
   padding-bottom: 0.5em;
   color: #000022;
   font-size: 16px;
 }
-.standard-link a::before,
-.custom-file a::before {
+a::before {
   content: "";
   display: block;
   position: absolute;
@@ -1550,24 +1562,19 @@ h1.headline-h1__border,
   transition: width 300ms ease-in-out;
 }
 @media screen and (min-width: 1200px) {
-  .standard-link a::before,
-  .custom-file a::before {
+  a::before {
     top: 80%;
   }
 }
-.standard-link a:hover,
-.custom-file a:hover {
+a:hover {
   color: #0b0b6e;
-  font-style: italic;
 }
-.standard-link a:hover::before,
-.custom-file a:hover::before {
+a:hover::before {
   width: 100%;
   left: 0;
 }
-.standard-link a:visited,
-.custom-file a:visited {
-  font-style: italic;
+a:visited {
+  color: rgba(11, 11, 110, 0.65);
 }
 
 .slideshow-container {

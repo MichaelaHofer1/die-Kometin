@@ -18,6 +18,7 @@ get_header();
             <span class="color2" style="border-color: deeppink"></span>
             </span>
         </h1>
+        <h2 class="category-title"><?php wp_list_categories() ?></h2>
         <div class="post">
 
             <?php

@@ -64,8 +64,10 @@ a {
   &:active {
     color: $contrast-color;
   }
+  &:hover {
+    color: purple;
+  }
 }
-
 
 li,
 ul {
@@ -74,6 +76,14 @@ ul {
   margin: 0;
 }
 
+ul:not([class]) {
+  margin: 0 1em;
+  padding: 0 1em;
+}
+li:not([class]) {
+  list-style: initial;
+  padding: .2em 0;
+}
 
 img {
   max-width: 100%;
